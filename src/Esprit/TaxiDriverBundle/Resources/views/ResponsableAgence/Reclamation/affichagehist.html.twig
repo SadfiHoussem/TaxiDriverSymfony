@@ -1,0 +1,107 @@
+ {# empty Twig template #}
+  
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("index")}}">Home</a></li>
+							<li> <a href="{{path("listChauffeur")}}"> Chauffeurs</a></li>
+							<li><a href="{{path("listOffre")}}"> Offres </a></li>
+								<li><a href="{{path("listVoiture")}}">  Voitures  </a></li>
+                                                                	<li class="active"><a href="{{path("essai")}}"> Reclamations  </a></li>
+							<a href="{{path("listTrajet")}}"> Trajet </a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
+
+       
+        {% block monform %}
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+<style>
+.titleprghp {
+background:#555;
+height: 46px;
+color: #000;
+font-size: 23px;
+height: 46px;
+line-height: 40px;
+padding: 0 0 0 20px;
+margin: 20px 0 20px;
+}
+</style>
+    <div class="titleprghp">
+                                                    <span class="prg">   <h3> Reclamation :  {{reclamation.sujetreclamation}}</h3></span> 
+                                                </div>
+ 
+    <table class="table table-hover">
+        <tbody>
+         
+            <tr>
+                <th> Client </th>
+                <td>{{reclamation.idClient.nom}}</td>
+            </tr>
+            <tr>
+                <th> Agence</th>
+                <td>{{reclamation.idAgence.nomAgence}}</td>
+            </tr>
+            <tr>
+                <th>Contenu </th>
+                <td>{{reclamation.contenu }}</td>
+            </tr>
+            <tr>
+                <th>etat</th>
+                
+            <td>
+	{% if reclamation.etat==1 %}
+	Confirmé
+	{% else %}
+	Non encore Confirmé
+	{% endif %}
+            </td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{reclamation.date|date('Y,m,d') }}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+     
+            
+    
+      
+            <a class="btn bg-primary"  role="btn"  href="{{path("essai")}}">   retour  </a> 
+     
+        
+            
+   
+       {#
+        &emsp;&emsp;&emsp;&emsp;
+    </td>
+    <td>
+        &emsp;&emsp;&emsp;&emsp;
+    </td>
+ 
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;
+        <a class="btn btn-default"  role="btn" href="{{path("updateBaby",{'id':baby.idBabysitter})}}">
+          Mettre a jour
+        </a>&emsp;
+        <a class="btn btn-default"  role="btn" href="{{path("deleteBaby",{'id':baby.idBabysitter})}}">
+          Supprimer
+        </a>
+    </td>
+    #}
+
+{% endblock %} 

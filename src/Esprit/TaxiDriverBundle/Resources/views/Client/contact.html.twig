@@ -1,0 +1,95 @@
+{% extends "EspritTaxiDriverBundle::layout.html.twig" %}
+
+{% block head %}
+<title>CITY TAXI Website Template | Contact :: W3layouts</title>
+		<link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css"  media="all" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		  <script src="{{asset('http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')}}"></script>
+		  <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+{% endblock %}
+
+{% block navbar %}
+<div class="top-nav">
+						<ul>
+							<li><a href="{{path("esprit_taxidriver_client_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_client_reservation_taxi")}}">Reserver</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_chauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_vehicule")}}">Vehicules</a></li>
+							<li class="active"><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+                                            
+					</div>
+{% endblock %}
+
+{% block content %}
+
+		
+			
+		 <!---start-contnet---->
+		 <div class="content">
+		 	<!---start-contact----->
+		 	<div class="contact">
+		 		<div class="wrap">
+				<div class="section group">				
+				<div class="col span_1_of_3">
+					<div class="contact_info">
+			    	 	<h3>Find Us Here</h3>
+			    	 		<div class="map">
+					   			<iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{asset("https://www.google.tn/maps/place/Esprit+Pr%C3%A9pa/@36.898482,10.189762,17z/data=!3m1!4b1!4m2!3m1!1s0x12e2cb7454c6ed51:0xcb5e71cbf91ec526")}}"></iframe><br><small><a href="https://www.google.fr/maps/place/ESPRIT/@36.8991406,10.1895187,17z/data=!4m7!1m4!3m3!1s0x12e2cb7454c6ed51:0x683b3ab5565cd357!2sESPRIT!3b1!3m1!1s0x12e2cb7454c6ed51:0x683b3ab5565cd357" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+					   		</div>
+      				</div>
+      			<div class="company_address">
+				     	<h3>Company Information :</h3>
+						    	<p>EL-Ghazala,Cebalat,Tunisie</p>
+						   		<p>22-56-2-9 Sit Amet, Lorem,</p>
+						   		<p>Tunisie</p>
+				   		<p>Phone:(00) 222 666 444</p>
+				   		<p>Fax: (000) 000 00 00 0</p>
+				 	 	<p>Email: <span>info@taxidriver.com</span></p>
+				   		<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+				   </div>
+				</div>				
+				<div class="col span_2_of_3">
+				  <div class="contact-form">
+				  	<h3>Contact Us</h3>
+					    <form method="post" action="contact-post.html">
+					    	<div>
+						    	<span><label>NOM</label></span>
+						    	<span><input name="userName" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						    	<span><label>E-MAIL</label></span>
+						    	<span><input name="userEmail" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						     	<span><label>MOBILE</label></span>
+						    	<span><input name="userPhone" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						    	<span><label>SUJET</label></span>
+						    	<span><textarea name="userMsg"> </textarea></span>
+						    </div>
+						   <div>
+						   		<span><input type="submit" value="Envoyer"></span>
+						  </div>
+					    </form>
+
+				    </div>
+  				</div>				
+			  </div>
+			</div>
+			</div>
+
+{% endblock %}   
+

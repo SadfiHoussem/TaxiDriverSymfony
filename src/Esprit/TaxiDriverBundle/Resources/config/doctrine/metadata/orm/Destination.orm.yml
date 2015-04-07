@@ -1,0 +1,43 @@
+Destination:
+    type: entity
+    table: destination
+    fields:
+        iddestination:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: idDestination
+            generator:
+                strategy: IDENTITY
+        longitude:
+            type: string
+            length: 80
+            fixed: false
+            nullable: false
+        latitude:
+            type: string
+            length: 80
+            fixed: false
+            nullable: false
+        nom:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+        region:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: idAgence
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

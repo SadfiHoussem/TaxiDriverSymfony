@@ -1,0 +1,174 @@
+{# empty Twig template #}
+{#   
+{% extends "MyAppCinemaBundle::layout.html.twig" %}
+
+     {% block head %}
+         <title>{% block title %}{{parent()}}-Mise a Jour{% endblock %}</title>
+             {% block stylesheet %}
+            <link rel="stylesheet" href="{{asset('css/css.css')}}"
+        {% endblock %}
+     {% endblock %}
+  
+
+       
+    {% block monform %}
+       {# <h1>Mise à jour d'un Film </h1>
+<form action="" method="post">
+    {{form_widget(Form)}}
+    <input type="submit" value="Metter à jour "/>
+    
+</form>  
+  {% endblock %}   #}
+  
+  
+   
+  <h1> Mise à jour d'un Chauffeur </h1>
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.numpermis)}}
+        </td>
+        <td>
+            {{form_widget(Form.numpermis)}}
+            {{form_errors(Form.numpermis)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+            {{ form_label(Form.nom)}}
+        </td>
+        <td>
+           {{ form_widget(Form.nom)}}
+           {{ form_errors(Form.nom)}}
+        </td>
+    </tr>
+   
+    
+     <tr>
+        <td>
+            {{ form_label(Form.prenom)}}
+        </td>
+        <td>
+           {{ form_widget(Form.prenom)}}
+           {{ form_errors(Form.prenom)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.idAgence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idAgence)}}
+            {{form_errors(Form.idAgence)}}
+        </td>
+    </tr>
+    
+    
+        
+    <tr>
+        <td>
+        {{form_label(Form.email)}}
+        </td>
+        <td>
+            {{form_widget(Form.email)}}
+            {{form_errors(Form.email)}}
+        </td>
+    </tr>
+    
+    
+           <tr>
+        <td>
+        {{form_label(Form.pwd)}}
+        </td>
+        <td>
+            {{form_widget(Form.pwd)}}
+            {{form_errors(Form.pwd)}}
+        </td>
+    </tr>
+
+    
+   
+    
+    
+     
+    <tr>
+        <td>
+        {{form_label(Form.etat)}}
+        </td>
+        <td>
+            {{form_widget(Form.etat)}}
+            {{form_errors(Form.etat)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(Form.note)}}
+        </td>
+        <td>
+            {{form_widget(Form.note)}}
+            {{form_errors(Form.note)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(Form.telephone)}}
+        </td>
+        <td>
+            {{form_widget(Form.telephone)}}
+            {{form_errors(Form.telephone)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(Form.adresse)}}
+        </td>
+        <td>
+            {{form_widget(Form.adresse)}}
+            {{form_errors(Form.adresse)}}
+        </td>
+    </tr>
+    
+    
+         <tr>
+        <td>
+        {{form_label(Form.cin)}}
+        </td>
+        <td>
+            {{form_widget(Form.cin)}}
+            {{form_errors(Form.cin)}}
+        </td>
+    </tr>
+    
+    
+    
+    <tr>
+        <td>
+            <input type="submit" value="Valider"/>
+        </td>
+        <td>
+             <input type="reset" value="Annuler"/>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+   
+   {#
+{% endblock %}
+#}

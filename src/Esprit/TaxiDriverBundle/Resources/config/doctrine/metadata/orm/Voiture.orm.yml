@@ -1,0 +1,37 @@
+Voiture:
+    type: entity
+    table: voiture
+    fields:
+        matricule:
+            id: true
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nbrplace:
+            type: integer
+            unsigned: false
+            nullable: false
+            column: nbrPlace
+        typevoiture:
+            type: string
+            length: 25
+            fixed: false
+            nullable: false
+            column: typeVoiture
+        etat:
+            type: boolean
+            nullable: false
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: idAgence
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

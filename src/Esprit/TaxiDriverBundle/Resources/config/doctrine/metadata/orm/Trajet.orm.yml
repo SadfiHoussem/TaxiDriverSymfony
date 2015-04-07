@@ -1,0 +1,41 @@
+Trajet:
+    type: entity
+    table: trajet
+    fields:
+        idtrajet:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: idTrajet
+            generator:
+                strategy: IDENTITY
+        adressedep:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: adresseDep
+        adressedest:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+            column: adresseDest
+        cout:
+            type: float
+            nullable: false
+        etat:
+            type: boolean
+            nullable: false
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: idAgence
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

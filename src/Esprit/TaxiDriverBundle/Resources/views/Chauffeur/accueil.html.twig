@@ -1,0 +1,30 @@
+{% extends "EspritTaxiDriverBundle::layout.html.twig" %}
+
+{% block navbar %}
+<div class="top-nav">
+						<ul>
+							<li class="active"><a href="{{path("esprit_taxidriver_chauffeur_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li><a href="">Reservations</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_chauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_vehicule")}}">Vehicules</a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+                                            
+					</div>
+{% endblock %}
+
+{% block slider %}
+    <div class="slider">					     
+					<div class="camera_wrap camera_azure_skin" id="camera_wrap_1">									           
+						<div data-src="{{asset("images/slider3.jpg")}}">  </div> 
+						<div data-src="{{asset("images/slider2.jpg")}}">  </div>
+						<div data-src="{{asset("images/slider1.jpg")}}">  </div>
+						
+					</div>
+					<div class="clear"> </div>					       
+			</div>	                        
+{% endblock %}

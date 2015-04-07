@@ -1,0 +1,192 @@
+{# empty Twig template #}
+  
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+							<li class="active"><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_chauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_vehicule")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
+
+       
+        {% block monform %}
+          
+             <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+            <center>
+   
+  <h1>  Ajouter un Chauffeur </h1>
+  <br> 
+  <br>
+  
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.numpermis)}}
+        </td>
+        <td>
+            {{form_widget(Form.numpermis)}}
+            {{form_errors(Form.numpermis)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+            {{ form_label(Form.nom)}}
+        </td>
+        <td>
+           {{ form_widget(Form.nom)}}
+           {{ form_errors(Form.nom)}}
+        </td>
+    </tr>
+   
+    
+     <tr>
+        <td>
+            {{ form_label(Form.prenom)}}
+        </td>
+        <td>
+           {{ form_widget(Form.prenom)}}
+           {{ form_errors(Form.prenom)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.idAgence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idAgence)}}
+            {{form_errors(Form.idAgence)}}
+        </td>
+    </tr>
+    
+    
+        
+    <tr>
+        <td>
+        {{form_label(Form.email)}}
+        </td>
+        <td>
+            {{form_widget(Form.email)}}
+            {{form_errors(Form.email)}}
+        </td>
+    </tr>
+    
+    
+           <tr>
+        <td>
+        {{form_label(Form.login)}}
+        </td>
+        <td>
+            {{form_widget(Form.login)}}
+            {{form_errors(Form.login)}}
+        </td>
+    </tr>
+
+    
+          <tr>
+        <td>
+        {{form_label(Form.pwd)}}
+        </td>
+        <td>
+            {{form_widget(Form.pwd)}}
+            {{form_errors(Form.pwd)}}
+        </td>
+    </tr>
+
+    
+    
+     
+    <tr>
+        <td>
+        {{form_label(Form.etat)}}
+        </td>
+        <td>
+            {{form_widget(Form.etat)}}
+            {{form_errors(Form.etat)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(Form.note)}}
+        </td>
+        <td>
+            {{form_widget(Form.note)}}
+            {{form_errors(Form.note)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(Form.telephone)}}
+        </td>
+        <td>
+            {{form_widget(Form.telephone)}}
+            {{form_errors(Form.telephone)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(Form.adresse)}}
+        </td>
+        <td>
+            {{form_widget(Form.adresse)}}
+            {{form_errors(Form.adresse)}}
+        </td>
+    </tr>
+    
+    
+         <tr>
+        <td>
+        {{form_label(Form.cin)}}
+        </td>
+        <td>
+            {{form_widget(Form.cin)}}
+            {{form_errors(Form.cin)}}
+        </td>
+    </tr>
+    
+    
+    
+    <tr>
+        <td>
+            <input type="submit" value="Valider"/>
+        </td>
+        <td>
+             <input type="reset" value="Annuler"/>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+            </center>
+  
+{% endblock %}

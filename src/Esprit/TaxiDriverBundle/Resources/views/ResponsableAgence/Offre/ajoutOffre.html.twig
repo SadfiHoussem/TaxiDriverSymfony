@@ -1,0 +1,97 @@
+{# empty Twig template #}
+  
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("index")}}">Home</a></li>
+							<a href="{{path("listChauffeur")}}"> Chauffeurs</a></li>
+							<li class="active"><a href="{{path("listOffre")}}"> Offres </a></li>
+								<li><a href="{{path("listVoiture")}}">  Voitures  </a></li>
+                                                                	<li><a href="{{path("essai")}}"> Reclamations  </a></li>
+						<a href="{{path("listTrajet")}}"> Trajet </a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
+
+       
+        {% block monform %}
+          
+             <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+            <center>
+    
+  <h1> Ajouter une offre </h1>
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.sujetoffre)}}
+        </td>
+        <td>
+            {{form_widget(Form.sujetoffre)}}
+            {{form_errors(Form.sujetoffre)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+            {{ form_label(Form.contenu)}}
+        </td>
+        <td>
+           {{ form_widget(Form.contenu)}}
+           {{ form_errors(Form.contenu)}}
+        </td>
+    </tr>
+   
+    
+     <tr>
+        <td>
+            {{ form_label(Form.date)}}
+        </td>
+        <td>
+           {{ form_widget(Form.date)}}
+           {{ form_errors(Form.date)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.idAgence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idAgence)}}
+            {{form_errors(Form.idAgence)}}
+        </td>
+    </tr>
+    
+    
+        
+   
+    
+    <tr>
+        <td>
+            <input type="submit" value="Valider"/>
+        </td>
+        <td>
+             <input type="reset" value="Annuler"/>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+            </center>
+
+{% endblock %}

@@ -1,0 +1,121 @@
+{# empty Twig template #}
+  
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
+                                                        <li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
+
+       
+        {% block monform %}
+          
+             <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+            <center>
+  
+   
+  <h1> Ajouter une Voiture  </h1>
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.matricule)}}
+        </td>
+        <td>
+            {{form_widget(Form.matricule)}}
+            {{form_errors(Form.matricule)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+            {{ form_label(Form.nbrplace)}}
+        </td>
+        <td>
+           {{ form_widget(Form.nbrplace)}}
+           {{ form_errors(Form.nbrplace)}}
+        </td>
+    </tr>
+   
+ 
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.idAgence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idAgence)}}
+            {{form_errors(Form.idAgence)}}
+        </td>
+    </tr>
+    
+    
+        
+   
+    
+    
+           <tr>
+        <td>
+        {{form_label(Form.typevoiture)}}
+        </td>
+        <td>
+            {{form_widget(Form.typevoiture)}}
+            {{form_errors(Form.typevoiture)}}
+        </td>
+    </tr>
+
+ 
+
+    
+    
+     
+    <tr>
+        <td>
+        {{form_label(Form.etat)}}
+        </td>
+        <td>
+            {{form_widget(Form.etat)}}
+            {{form_errors(Form.etat)}}
+        </td>
+    </tr>
+    
+   
+    
+    
+    <tr>
+        <td>
+            <input type="submit" value="Valider"/>
+        </td>
+        <td>
+             <input type="reset" value="Annuler"/>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+   
+  
+{% endblock %}

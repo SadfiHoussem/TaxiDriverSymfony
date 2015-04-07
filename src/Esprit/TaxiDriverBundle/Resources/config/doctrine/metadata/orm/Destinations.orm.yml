@@ -1,0 +1,27 @@
+Destinations:
+    type: entity
+    table: destinations
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        longitude:
+            type: string
+            length: 80
+            fixed: false
+            nullable: false
+        latitude:
+            type: string
+            length: 80
+            fixed: false
+            nullable: false
+        nom:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+    lifecycleCallbacks: {  }

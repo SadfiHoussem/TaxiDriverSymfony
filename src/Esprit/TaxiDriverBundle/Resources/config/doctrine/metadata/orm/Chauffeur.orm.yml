@@ -1,0 +1,74 @@
+Chauffeur:
+    type: entity
+    table: chauffeur
+    fields:
+        idchauffeur:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: idChauffeur
+            generator:
+                strategy: IDENTITY
+        numpermis:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+            column: numPermis
+        etat:
+            type: boolean
+            nullable: false
+        note:
+            type: integer
+            unsigned: false
+            nullable: false
+        login:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+        pwd:
+            type: string
+            length: 25
+            fixed: false
+            nullable: false
+        nom:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+        prenom:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+        email:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+        telephone:
+            type: integer
+            unsigned: false
+            nullable: false
+        adresse:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+        cin:
+            type: integer
+            unsigned: false
+            nullable: false
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: idAgence
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

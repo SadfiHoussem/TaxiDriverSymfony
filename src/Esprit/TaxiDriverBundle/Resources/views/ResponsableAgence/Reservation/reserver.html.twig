@@ -1,0 +1,113 @@
+<html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+
+.hide{
+
+visibility: hidden
+
+}
+
+.defaut{
+border-style: solid;
+border-color: #AAAAAA;
+border-width: 2px;
+}
+ 
+.selected{
+border-style: solid;
+border-color: #AAAAAA;
+border-width: 2px;
+background-color: #8888DD;
+}
+//-->
+</style>
+ 
+<script type="text/javascript">
+<!--
+oldObj = null;
+function SelectLigne(obj)
+{
+ var idLigne=obj.id;
+ obj.className="selected";
+ 
+
+ 
+ document.getElementById("selectC").value=obj.cells[5].id;
+ alert(document.getElementById("selectC").value);
+ 
+ if (oldObj!==null)
+ {
+    oldObj.className = "defaut";
+    oldObj = obj;
+ }
+ else
+ {
+    oldObj = obj;
+ }
+ 
+ 
+ 
+}
+ 
+//-->
+</script>
+ 
+</head>
+ 
+<body>
+<form method="POST" action="">
+<h2>Choix du trajet</h2>
+
+{{form_widget(form.date)}}
+
+<br>
+
+Adresse Source :
+<select name="Adressesrc">
+  {% for d in dest %}
+  <option>{{d.nom}}</option>
+  {% endfor %}
+</select><br>
+
+Adresse Destination :
+<select name="Adressedest">
+  {% for d in dest %}
+  <option>{{d.nom}}</option>
+  {% endfor %}
+</select><br>
+
+<h1>Liste des taxi</h1>
+<table border="1" class="defaut" >
+    
+    <tr>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Note</th>
+        <th>Voiture</th>
+        <th>Nombre de Place</th>   
+    </tr>
+    
+    {% for t in taxi %}
+        <tr class="defaut" onclick="SelectLigne(this)">
+            <td class="defaut">{{t.nom}}</td>
+            <td class="defaut">{{t.prenom}}</td>
+            <td class="defaut">{{t.note}}</td>
+            <td class="defaut">{{t.typevoiture}}</td>
+            <td class="defaut">{{t.nbrplace}}</td>
+            <td class="hide" id="{{t.idtaxi}}"></td>
+        </tr>
+    {% endfor %}        
+    
+</table>  
+    
+<input type="hidden" id="selectC" name="selectionCourante" value="" >
+<br>
+<input type="submit" value="Ajouter"/>
+{{form_rest(form)}}
+</form>
+</body>
+ 
+</html>

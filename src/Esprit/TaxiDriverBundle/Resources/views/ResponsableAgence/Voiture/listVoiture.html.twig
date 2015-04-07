@@ -1,0 +1,103 @@
+{# empty Twig template #}
+  
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
+                                                        <li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
+
+       
+        {% block monform %}
+        
+           <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+    <script type="text/javascript" language="javascript" src="{{ asset('js1/jquery-1.10.2.min.js') }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('js1/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('js1/dataTables.bootstrap.js')}}"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('js1/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" charset="utf-8">
+
+
+        $(document).ready(function() {
+            $('#example').dataTable();
+        } );
+    </script>
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<br>
+<br>
+<div class="container">
+
+
+<table id="example" class="display" cellspacing="20" width="100%">
+    <thead>  
+    <tr><th>Matricule</th>
+        <th>Agence</th>
+        <th>etat </th>
+        <th>Type </th>
+        <th>nombre de place </th>
+    <th> Modifier </th>
+     <th> Supprimer </th>
+        </tr>
+          </thead>
+    <tbody>
+{% for V in voiture %}
+        <tr>
+            <td>{{V.matricule}}</td>
+              <td>{{V.nomagence}}</td>
+             <td>    {% if V.etat==1 %}
+	Disponible
+	{% else %}
+	Nom Dsiponible
+	{% endif %}
+        </td>
+                    <td>{{V.typevoiture}}</td>
+             <td>{{V.nbrplace}}</td>
+        
+        
+            
+         
+             <td><a href="{{path("updateVoiture",{'matricule':V.matricule})}}"> Modifier </a></td>
+         <td><a href="{{path("deleteVoiture",{'matricule':V.matricule})}}"> Supprimer </a></td>   
+   
+           
+        </tr>
+        {% endfor %} 
+</tbody>
+</table>
+
+<center>
+       <a class="btn btn-primary" role="btn" href="{{path("ajoutVoiture")}}"> Ajouter une voiture  <img src="{{ asset('images/Karhba.png')}}"/> </a></button>
+</center>
+</div>
+<script type="text/javascript">
+
+    $('#example')
+            .removeClass( 'display' )
+            .addClass('table table-striped table-bordered');
+</script>
+
+
+{% endblock %}  

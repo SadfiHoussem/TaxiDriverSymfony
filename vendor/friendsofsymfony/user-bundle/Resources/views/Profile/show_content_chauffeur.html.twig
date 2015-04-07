@@ -1,0 +1,16 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form method="POST" action="">
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans }}: <input type="text" name="username" value="{{ user.username }}"></p>
+    <p>{{ 'profile.show.email'|trans }}: <input type="text" name="email" value="{{ user.email }}"></p>
+    <p> Numero de permis : <input type="text" name="numPermis" value="{{ chauffeur.numPermis }}"></p>
+    <p> Nom : <input type="text" name="nom" value="{{ chauffeur.nom }}"></p>
+    <p> Prenom : <input type="text" name="prenom" value="{{ chauffeur.prenom }}"></p>
+    <p> Telephone : <input type="text" name="telephone" value="{{ chauffeur.telephone }}"></p>
+    <p> CIN : <input type="text" name="cin" value="{{ chauffeur.cin }}"></p>
+    <p> Adresse : <input type="text" name="adresse" value="{{ chauffeur.adresse }}"></p>
+</div>
+    <input type="submit" value="Valider">
+</form>
+

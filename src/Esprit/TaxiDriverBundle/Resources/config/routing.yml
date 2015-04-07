@@ -1,0 +1,120 @@
+_welcome:
+    pattern:  /
+    defaults: { _controller: EspritTaxiDriverBundle:Welcome:index }
+    
+esprit_taxidriver_client_homepage:
+    pattern:  /client/accueil
+    defaults: { _controller: EspritTaxiDriverBundle:Default:accueilClient }
+esprit_taxidriver_resp_agence_homepage:
+    pattern:  /respAgence/accueil
+    defaults: { _controller: EspritTaxiDriverBundle:Default:accueilRespAgence }
+esprit_taxidriver_chauffeur_homepage:
+    pattern:  /chauffeur/accueil
+    defaults: { _controller: EspritTaxiDriverBundle:Default:accueilChauffeur }
+esprit_taxidriver_admin_homepage:
+    pattern:  /admin/accueil
+    defaults: { _controller: EspritTaxiDriverBundle:Default:accueilAdmin }
+
+esprit_taxidriver_a_propos:
+    pattern:  /apropos
+    defaults: { _controller: EspritTaxiDriverBundle:Default:apropos }
+    
+    
+esprit_taxidriver_contact:
+    pattern:  /contact
+    defaults: { _controller: EspritTaxiDriverBundle:Default:contact }
+
+    
+esprit_taxidriver_affi_agence:
+    pattern:  /agence
+    defaults: { _controller: EspritTaxiDriverBundle:Agence:affAgence} 
+    
+esprit_taxidriver_affi_offre:
+    pattern:  /offre
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:affOffre} 
+    
+esprit_taxidriver_affi_chauffeur:
+    pattern:  /chauffeur
+    defaults: { _controller: EspritTaxiDriverBundle:Chauffeur:affChauffeur}
+    
+esprit_taxidriver_affi_vehicule:
+    pattern:  /voiture
+    defaults: { _controller: EspritTaxiDriverBundle:Voiture:affVehicule} 
+    
+esprit_taxidriver_client_reservation_taxi:
+    pattern:  /client/resTaxi
+    defaults: { _controller: EspritTaxiDriverBundle:Reservation:reserver }
+    
+esprit_taxidriver_client_consul_conf_res:
+    pattern:  /client/consulConfRes
+    defaults: { _controller: EspritTaxiDriverBundle:Reservation:consulterConfRes }
+    
+# Responsable Agence
+
+esprit_taxidriver_resp_agence_listRNCreclamation:
+    pattern:  /respAgence/listreclamationNC
+    defaults: { _controller: EspritTaxiDriverBundle:Reclamation:listRecNonConf }
+
+esprit_taxidriver_resp_agence_listReclamation:
+    pattern:  /respAgence/listReclamation
+    defaults: { _controller: EspritTaxiDriverBundle:Reclamation:listReclamation }
+
+esprit_taxidriver_resp_agence_AffichReclamation:
+    pattern:  /respAgence/AffichReclamation
+    defaults: { _controller: EspritTaxiDriverBundle:Reclamation:AffichReclamation }
+
+esprit_taxidriver_resp_agence_affichageRec:
+    pattern:  /respAgence/affichageRec/{idreclamation}
+    defaults: { _controller: EspritTaxiDriverBundle:Reclamation:affichage }
+esprit_taxidriver_resp_agence_historiqueRec:
+    pattern:  /respAgence/historique
+    defaults: { _controller: EspritTaxiDriverBundle:Reclamation:historique }
+esprit_taxidriver_resp_agence_confirmationRec:
+    pattern:  /respAgence/confirmation/{idreclamation}
+    defaults: { _controller: EspritTaxiDriverBundle:Reclamation:confirmation }
+esprit_taxidriver_resp_agence_affichagehistRec:
+    pattern:  /respAgence/affichagehist/{idreclamation}
+
+
+esprit_taxidriver_resp_agence_listChauffeur:
+    pattern:  /respAgence/listChauffeur
+    defaults: { _controller: EspritTaxiDriverBundle:Chauffeur:listChauffeur }
+esprit_taxidriver_resp_agence_updateChauffeur:
+    pattern:  /respAgence/updateChauffeur/{idchauffeur}
+    defaults: { _controller: EspritTaxiDriverBundle:Chauffeur:updateChauffeur }
+esprit_taxidriver_resp_agence_deleteChauffeur:
+    pattern:  /respAgence/deleteChauffeur/{idchauffeur}
+    defaults: { _controller:  EspritTaxiDriverBundle:Chauffeur:deleteChauffeur }
+esprit_taxidriver_resp_agence_ajoutChauffeur:
+    pattern:  /respAgence/ajoutChauffeur
+    defaults: { _controller: EspritTaxiDriverBundle:Chauffeur:ajoutChauffeur }
+
+
+esprit_taxidriver_resp_agence_listVoiture:
+    pattern:  /respAgence/listVoiture
+    defaults: { _controller: EspritTaxiDriverBundle:Voiture:listVoiture }
+esprit_taxidriver_resp_agence_updateVoiture:
+    pattern:  /respAgence/updateVoiture/{matricule}
+    defaults: { _controller: EspritTaxiDriverBundle:Voiture:updateVoiture }
+esprit_taxidriver_resp_agence_deleteVoiture:
+    pattern:  /respAgence/deleteVoiture/{matricule}
+    defaults: { _controller:  EspritTaxiDriverBundle:Voiture:deleteVoiture }
+esprit_taxidriver_resp_agence_ajoutVoiture:
+    pattern:  /respAgence/ajoutVoiture
+    defaults: { _controller: EspritTaxiDriverBundle:Voiture:ajoutVoiture }    
+
+
+esprit_taxidriver_resp_agence_listTrajet:
+    pattern:  /respAgence/trajet
+    defaults: { _controller: EspritTaxiDriverBundle:Trajet:listTrajet }
+
+esprit_taxidriver_resp_agence_confirmationtrajet:
+    pattern:  /respAgence/confirmationtrajet/{idtrajet}
+    defaults: { _controller: EspritTaxiDriverBundle:Trajet:confirmationtrajet }
+esprit_taxidriver_resp_agence_deleteTrajet:
+    pattern:  /respAgence/deleteTrajet/{idtrajet}
+    defaults: { _controller:  EspritTaxiDriverBundle:Trajet:deleteTrajet }
+    
+
+    
+    

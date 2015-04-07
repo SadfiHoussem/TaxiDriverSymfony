@@ -1,0 +1,40 @@
+Agence:
+    type: entity
+    table: agence
+    fields:
+        idagence:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: idAgence
+            generator:
+                strategy: IDENTITY
+        nomagence:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+            column: nomAgence
+        telagence:
+            type: integer
+            unsigned: false
+            nullable: false
+            column: telAgence
+        adresseagence:
+            type: string
+            length: 50
+            fixed: false
+            nullable: false
+            column: adresseAgence
+    manyToOne:
+        idrespagence:
+            targetEntity: Responsableagence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idRespAgence:
+                    referencedColumnName: idRespAgence
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

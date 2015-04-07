@@ -1,0 +1,110 @@
+ {# empty Twig template #}
+  
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+                                                        <a href="{{path("esprit_taxidriver_resp_agence_listReclamation")}}"></a>
+{% endblock %}
+    
+
+
+       
+        {% block content %}
+
+
+
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+<style>
+.titleprghp {
+background:#555;
+height: 46px;
+color: #000;
+font-size: 23px;
+height: 46px;
+line-height: 40px;
+padding: 0 0 0 20px;
+margin: 20px 0 20px;
+}
+</style>
+    <div class="titleprghp">
+                                                    <span class="prg">   <h3> Reclamation :  {{reclamation.sujetreclamation}}</h3></span> 
+                                                </div>
+ 
+    <table class="table table-hover">
+        <tbody>
+         
+            <tr>
+                <th> Client </th>
+                <td>{{reclamation.idClient.nom}}</td>
+            </tr>
+            <tr>
+                <th> Agence</th>
+                <td>{{reclamation.idAgence.nomAgence}}</td>
+            </tr>
+            <tr>
+                <th>Contenu </th>
+                <td>{{reclamation.contenu }}</td>
+            </tr>
+            <tr>
+                <th>etat</th>
+                
+            <td>
+	{% if reclamation.etat==1 %}
+	Confirmé
+	{% else %}
+	Non encore Confirmé
+	{% endif %}
+            </td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{reclamation.date|date('Y,m,d') }}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+     
+            
+    
+      
+            <a class="btn bg-primary"  role="btn"  href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}">   Retour  </a> 
+             &emsp;&emsp;&emsp;&emsp;
+     
+             <a  class="btn bg-primary"  role="btn" href="{{path("esprit_taxidriver_resp_agence_confirmationRec",{'idreclamation':reclamation.idreclamation})}}"> Confirmation </a>
+            
+   
+       {#
+        &emsp;&emsp;&emsp;&emsp;
+    </td>
+    <td>
+        &emsp;&emsp;&emsp;&emsp;
+    </td>
+ 
+    <td>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;
+        <a class="btn btn-default"  role="btn" href="{{path("updateBaby",{'id':baby.idBabysitter})}}">
+          Mettre a jour
+        </a>&emsp;
+        <a class="btn btn-default"  role="btn" href="{{path("deleteBaby",{'id':baby.idBabysitter})}}">
+          Supprimer
+        </a>
+    </td>
+    #}
+{% endblock %} 

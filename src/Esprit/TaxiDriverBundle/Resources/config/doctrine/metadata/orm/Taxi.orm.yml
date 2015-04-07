@@ -1,0 +1,44 @@
+Taxi:
+    type: entity
+    table: taxi
+    fields:
+        idtaxi:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: idTaxi
+            generator:
+                strategy: IDENTITY
+        etat:
+            type: boolean
+            nullable: false
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: idAgence
+            orphanRemoval: false
+        idchauffeur:
+            targetEntity: Chauffeur
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idChauffeur:
+                    referencedColumnName: idChauffeur
+            orphanRemoval: false
+        matricule:
+            targetEntity: Voiture
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                matricule:
+                    referencedColumnName: matricule
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

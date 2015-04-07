@@ -1,0 +1,100 @@
+{% extends "EspritTaxiDriverBundle::samar.html.twig" %}
+
+{% block head %} {{parent()}}
+    
+   
+{% endblock %}
+     
+        {% block monform %}
+ 
+            <center>
+  
+  <h1> Modifier une Voiture  </h1>
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.matricule)}}
+        </td>
+        <td>
+            {{form_widget(Form.matricule)}}
+            {{form_errors(Form.matricule)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+            {{ form_label(Form.nbrplace)}}
+        </td>
+        <td>
+           {{ form_widget(Form.nbrplace)}}
+           {{ form_errors(Form.nbrplace)}}
+        </td>
+    </tr>
+   
+ 
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.idAgence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idAgence)}}
+            {{form_errors(Form.idAgence)}}
+        </td>
+    </tr>
+    
+    
+        
+   
+    
+    
+           <tr>
+        <td>
+        {{form_label(Form.typevoiture)}}
+        </td>
+        <td>
+            {{form_widget(Form.typevoiture)}}
+            {{form_errors(Form.typevoiture)}}
+        </td>
+    </tr>
+
+ 
+
+    
+    
+     
+    <tr>
+        <td>
+        {{form_label(Form.etat)}}
+        </td>
+        <td>
+            {{form_widget(Form.etat)}}
+            {{form_errors(Form.etat)}}
+        </td>
+    </tr>
+    
+   
+    
+    
+    <tr>
+        <td>
+            <input type="submit" value="Valider"/>
+        </td>
+        <td>
+             <input type="reset" value="Annuler"/>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+   
+  
+{% endblock %}

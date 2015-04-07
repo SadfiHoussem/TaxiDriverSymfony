@@ -1,0 +1,59 @@
+Reservation:
+    type: entity
+    table: reservation
+    fields:
+        idreservation:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            column: idReservation
+            generator:
+                strategy: IDENTITY
+        confirme:
+            type: boolean
+            nullable: false
+        done:
+            type: boolean
+            nullable: false
+        date:
+            type: datetime
+            nullable: false
+    manyToOne:
+        idagence:
+            targetEntity: Agence
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idAgence:
+                    referencedColumnName: idAgence
+            orphanRemoval: false
+        idclient:
+            targetEntity: Client
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idClient:
+                    referencedColumnName: idClient
+            orphanRemoval: false
+        idtrajet:
+            targetEntity: Trajet
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTrajet:
+                    referencedColumnName: idTrajet
+            orphanRemoval: false
+        idtaxi:
+            targetEntity: Taxi
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                idTaxi:
+                    referencedColumnName: idTaxi
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

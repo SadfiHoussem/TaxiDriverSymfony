@@ -1,0 +1,58 @@
+{% extends "EspritTaxiDriverBundle::layout.html.twig" %}
+
+{% block navbar %}
+<div class="top-nav">
+						<ul>
+							<li><a href="{{path("esprit_taxidriver_client_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_client_a_propos")}}">A propos</a></li>
+							<li><a href="{{path("esprit_taxidriver_client_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_client_affi_offre")}}">Offres</a></li>
+                                                        <li class="active"><a href="{{path("esprit_taxidriver_client_reservation_taxi")}}">Reserver</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_client_affi_chauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_client_affi_vehicule")}}">Vehicules</a></li>
+							<li><a href="{{path("esprit_taxidriver_client_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+                                            
+					</div>
+{% endblock %}
+
+{% block content %}
+
+
+<h1>Liste des réservations du client</h1>
+<table border="1">
+    
+    <tr>
+        <th>Nom Chauffeur</th>
+        <th>Prenom Chauffeur</th>
+        <th>Note</th>
+        <th>Voiture</th>
+        <th>Nombre de Place</th>   
+        <th>Adresse Départ</th>   
+        <th>Adresse Destination</th>   
+        <th>Estimation</th>
+        <th>Nom Agence</th>   
+        <th>Date</th>   
+        <th>Confirmation</th>   
+    </tr>
+    
+        {% for r in res %}
+        <tr>
+            <td>{{r.nom}}</td>
+            <td>{{r.prenom}}</td>
+            <td>{{r.note}}</td>
+            <td>{{r.typevoiture}}</td>
+            <td>{{r.nbrplace}}</td>
+            <td>{{r.adressedep}}</td>
+            <td>{{r.adressedest}}</td>
+            <td>{{r.cout}}</td>
+            <td>{{r.nomagence}}</td>
+            <td>{{r.date|date('d/m/Y')}}</td>
+            <td>{{r.confirme}}</td>
+        </tr>
+        {% endfor %}
+    
+</table> 
+
+{% endblock %}
