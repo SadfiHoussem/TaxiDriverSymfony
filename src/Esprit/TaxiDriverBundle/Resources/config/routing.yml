@@ -41,6 +41,8 @@ esprit_taxidriver_affi_vehicule:
     pattern:  /voiture
     defaults: { _controller: EspritTaxiDriverBundle:Voiture:affVehicule} 
     
+# Client
+
 esprit_taxidriver_client_reservation_taxi:
     pattern:  /client/resTaxi
     defaults: { _controller: EspritTaxiDriverBundle:Reservation:reserver }
@@ -48,6 +50,10 @@ esprit_taxidriver_client_reservation_taxi:
 esprit_taxidriver_client_consul_conf_res:
     pattern:  /client/consulConfRes
     defaults: { _controller: EspritTaxiDriverBundle:Reservation:consulterConfRes }
+
+esprit_taxidriver_client_detail_offre:
+    pattern:  /client/detailoffre/{id}
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:detailoffre }    
     
 # Responsable Agence
 
