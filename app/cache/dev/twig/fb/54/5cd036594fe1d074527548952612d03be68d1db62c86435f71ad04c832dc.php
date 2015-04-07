@@ -41,30 +41,34 @@ class __TwigTemplate_fb545cd036594fe1d074527548952612d03be68d1db62c86435f71ad04c
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 13
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 14
-        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
+        // line 15
+        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listOffre");
         echo "\">Offres</a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 15
+        // line 16
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 16
+        // line 17
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 17
+        // line 18
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 18
+        // line 19
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 19
+        // line 20
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -73,35 +77,35 @@ class __TwigTemplate_fb545cd036594fe1d074527548952612d03be68d1db62c86435f71ad04c
 ";
     }
 
-    // line 28
+    // line 29
     public function block_content($context, array $blocks = array())
     {
-        // line 29
+        // line 30
         echo "
 
 
   <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 32
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/bootstrap2.css"), "html", null, true);
         echo "\" >
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 33
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/dataTables.bootstrap.css"), "html", null, true);
         echo "\">
     <script type=\"text/javascript\" language=\"javascript\" src=\"";
-        // line 34
+        // line 35
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js1/jquery-1.10.2.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" language=\"javascript\" src=\"";
-        // line 35
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js1/jquery.dataTables.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" language=\"javascript\" src=\"";
-        // line 36
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js1/dataTables.bootstrap.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" language=\"javascript\" src=\"";
-        // line 37
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js1/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script type=\"text/javascript\" charset=\"utf-8\">
@@ -140,47 +144,47 @@ class __TwigTemplate_fb545cd036594fe1d074527548952612d03be68d1db62c86435f71ad04c
     </thead>
     <tbody>
 ";
-        // line 73
+        // line 74
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")));
         foreach ($context['_seq'] as $context["_key"] => $context["r"]) {
-            // line 74
+            // line 75
             echo "    
     ";
-            // line 75
+            // line 76
             if (($this->getAttribute((isset($context["r"]) ? $context["r"] : $this->getContext($context, "r")), "etat") == 1)) {
-                // line 76
+                // line 77
                 echo "        <tr>
             <td>";
-                // line 77
+                // line 78
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["r"]) ? $context["r"] : $this->getContext($context, "r")), "idreclamation"), "html", null, true);
                 echo "</td>
             <td>";
-                // line 78
+                // line 79
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["r"]) ? $context["r"] : $this->getContext($context, "r")), "sujetreclamation"), "html", null, true);
                 echo "</td>
             
             <td>    ";
-                // line 80
+                // line 81
                 if (($this->getAttribute((isset($context["r"]) ? $context["r"] : $this->getContext($context, "r")), "etat") == 1)) {
-                    // line 81
+                    // line 82
                     echo "\tConfirmé
 \t";
                 } else {
-                    // line 83
+                    // line 84
                     echo "\tNon encore Confirmé
 \t";
                 }
-                // line 85
+                // line 86
                 echo "        </td>
                <td>     <a href=\"";
-                // line 86
+                // line 87
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_historiqueRec", array("idreclamation" => $this->getAttribute((isset($context["r"]) ? $context["r"] : $this->getContext($context, "r")), "idreclamation"))), "html", null, true);
                 echo "\">ReadMore</a> </td>
                      
             ";
             }
-            // line 88
+            // line 89
             echo "        
             
 
@@ -192,7 +196,7 @@ class __TwigTemplate_fb545cd036594fe1d074527548952612d03be68d1db62c86435f71ad04c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['r'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 94
+        // line 95
         echo " 
 
 </tbody>
@@ -200,7 +204,7 @@ class __TwigTemplate_fb545cd036594fe1d074527548952612d03be68d1db62c86435f71ad04c
     
   
            <a class=\"btn btn-primary\" role=\"btn\" href=\"";
-        // line 100
+        // line 101
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\">   retour  </a></button>
      </a>   
@@ -228,6 +232,6 @@ class __TwigTemplate_fb545cd036594fe1d074527548952612d03be68d1db62c86435f71ad04c
 
     public function getDebugInfo()
     {
-        return array (  204 => 100,  196 => 94,  184 => 88,  178 => 86,  175 => 85,  171 => 83,  167 => 81,  165 => 80,  160 => 78,  156 => 77,  153 => 76,  151 => 75,  148 => 74,  144 => 73,  105 => 37,  101 => 36,  97 => 35,  93 => 34,  89 => 33,  85 => 32,  80 => 29,  77 => 28,  68 => 19,  64 => 18,  60 => 17,  56 => 16,  52 => 15,  48 => 14,  44 => 13,  40 => 12,  36 => 11,  32 => 9,  29 => 8,);
+        return array (  208 => 101,  200 => 95,  188 => 89,  182 => 87,  179 => 86,  175 => 84,  171 => 82,  169 => 81,  164 => 79,  160 => 78,  157 => 77,  155 => 76,  152 => 75,  148 => 74,  109 => 38,  105 => 37,  101 => 36,  97 => 35,  93 => 34,  89 => 33,  84 => 30,  81 => 29,  72 => 20,  68 => 19,  64 => 18,  60 => 17,  56 => 16,  52 => 15,  48 => 14,  44 => 13,  40 => 12,  36 => 11,  32 => 9,  29 => 8,);
     }
 }

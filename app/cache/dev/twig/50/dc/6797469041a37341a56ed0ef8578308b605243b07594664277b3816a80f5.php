@@ -57,11 +57,19 @@ class __TwigTemplate_50dc6797469041a37341a56ed0ef8578308b605243b07594664277b3816
 \t\t\t\t        \$('.gallery-grid a').lightBox();
 \t\t\t\t    });
 \t\t\t\t    </script>
-                                    
-                                    ";
+                                    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/bootstrap2.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
         // line 25
-        $this->displayBlock('head', $context, $blocks);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/dataTables.bootstrap.css"), "html", null, true);
+        echo "\">
+    
+                                    ";
         // line 27
+        $this->displayBlock('head', $context, $blocks);
+        // line 29
         echo "\t</head>
         
 \t<body>
@@ -73,7 +81,7 @@ class __TwigTemplate_50dc6797469041a37341a56ed0ef8578308b605243b07594664277b3816
 \t\t\t\t\t<!---start-logo---->
 \t\t\t\t\t<div class=\"logo\">
 \t\t\t\t\t\t<a href=\"index.html\"><img src=\"";
-        // line 37
+        // line 39
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/logo1.png"), "html", null, true);
         echo "\"title=\"logo\" /></a>
 \t\t\t\t\t</div>
@@ -81,18 +89,18 @@ class __TwigTemplate_50dc6797469041a37341a56ed0ef8578308b605243b07594664277b3816
 \t\t\t\t\t<!---start-top-nav---->
                                          
                                         ";
-        // line 42
-        $this->displayBlock('navbar', $context, $blocks);
         // line 44
+        $this->displayBlock('navbar', $context, $blocks);
+        // line 46
         echo "\t\t\t\t\t<div class=\"clear\"> </div>
 \t\t\t\t\t<!---End-top-nav---->
 \t\t\t\t</div>
 \t\t\t</div>
 \t\t\t<!---End-header----->
 \t";
-        // line 49
-        $this->displayBlock('content', $context, $blocks);
         // line 51
+        $this->displayBlock('content', $context, $blocks);
+        // line 53
         echo "    
 \t\t</div>
 \t\t<!---End-wrap----->
@@ -130,24 +138,24 @@ class __TwigTemplate_50dc6797469041a37341a56ed0ef8578308b605243b07594664277b3816
 ";
     }
 
-    // line 25
+    // line 27
     public function block_head($context, array $blocks = array())
     {
-        // line 26
+        // line 28
         echo "                                        ";
     }
 
-    // line 42
+    // line 44
     public function block_navbar($context, array $blocks = array())
     {
-        // line 43
+        // line 45
         echo "                                        ";
     }
 
-    // line 49
+    // line 51
     public function block_content($context, array $blocks = array())
     {
-        // line 50
+        // line 52
         echo "            
         ";
     }
@@ -164,6 +172,6 @@ class __TwigTemplate_50dc6797469041a37341a56ed0ef8578308b605243b07594664277b3816
 
     public function getDebugInfo()
     {
-        return array (  151 => 50,  148 => 49,  144 => 43,  141 => 42,  137 => 26,  134 => 25,  96 => 51,  94 => 49,  85 => 42,  65 => 27,  63 => 25,  53 => 18,  49 => 17,  37 => 8,  33 => 7,  22 => 1,  199 => 90,  192 => 85,  181 => 81,  177 => 80,  171 => 77,  167 => 76,  164 => 75,  160 => 73,  156 => 71,  154 => 70,  150 => 69,  146 => 68,  143 => 67,  139 => 66,  103 => 33,  99 => 32,  95 => 31,  91 => 30,  87 => 44,  83 => 28,  80 => 27,  77 => 37,  68 => 17,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  48 => 12,  44 => 11,  40 => 10,  36 => 9,  32 => 7,  29 => 6,);
+        return array (  159 => 52,  156 => 51,  152 => 45,  149 => 44,  145 => 28,  142 => 27,  104 => 53,  102 => 51,  95 => 46,  93 => 44,  85 => 39,  73 => 29,  71 => 27,  66 => 25,  62 => 24,  53 => 18,  49 => 17,  37 => 8,  33 => 7,  29 => 6,  22 => 1,);
     }
 }

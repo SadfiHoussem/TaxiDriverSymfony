@@ -41,56 +41,60 @@ class __TwigTemplate_5a9e15c7a0304e790d2ee4a38c39d2baffdf48c64e20066ca2aa67fc4a4
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 11
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 12
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 12
-        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
+        // line 13
+        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listOffre");
         echo "\">Offres</a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 13
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 15
+        // line 16
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 16
+        // line 17
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 17
+        // line 18
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</div>
                                                         <a href=\"";
-        // line 21
+        // line 22
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listReclamation");
         echo "\"></a>
 ";
     }
 
-    // line 27
+    // line 28
     public function block_content($context, array $blocks = array())
     {
-        // line 28
+        // line 29
         echo "
 
 
 
 <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 32
+        // line 33
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/bootstrap2.css"), "html", null, true);
         echo "\" >
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 33
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/dataTables.bootstrap.css"), "html", null, true);
         echo "\">
 <style>
@@ -107,7 +111,7 @@ margin: 20px 0 20px;
 </style>
     <div class=\"titleprghp\">
                                                     <span class=\"prg\">   <h3> Reclamation :  ";
-        // line 47
+        // line 48
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "sujetreclamation"), "html", null, true);
         echo "</h3></span> 
                                                 </div>
@@ -118,21 +122,21 @@ margin: 20px 0 20px;
             <tr>
                 <th> Client </th>
                 <td>";
-        // line 55
+        // line 56
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "idClient"), "nom"), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th> Agence</th>
                 <td>";
-        // line 59
+        // line 60
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "idAgence"), "nomAgence"), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Contenu </th>
                 <td>";
-        // line 63
+        // line 64
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "contenu"), "html", null, true);
         echo "</td>
             </tr>
@@ -141,23 +145,23 @@ margin: 20px 0 20px;
                 
             <td>
 \t";
-        // line 69
+        // line 70
         if (($this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "etat") == 1)) {
-            // line 70
+            // line 71
             echo "\tConfirmé
 \t";
         } else {
-            // line 72
+            // line 73
             echo "\tNon encore Confirmé
 \t";
         }
-        // line 74
+        // line 75
         echo "            </td>
             </tr>
             <tr>
                 <th>Date</th>
                 <td>";
-        // line 78
+        // line 79
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "date"), "Y,m,d"), "html", null, true);
         echo "</td>
             </tr>
@@ -169,13 +173,13 @@ margin: 20px 0 20px;
     
       
             <a class=\"btn bg-primary\"  role=\"btn\"  href=\"";
-        // line 87
+        // line 88
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\">   Retour  </a> 
              &emsp;&emsp;&emsp;&emsp;
      
              <a  class=\"btn bg-primary\"  role=\"btn\" href=\"";
-        // line 90
+        // line 91
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_confirmationRec", array("idreclamation" => $this->getAttribute((isset($context["reclamation"]) ? $context["reclamation"] : $this->getContext($context, "reclamation")), "idreclamation"))), "html", null, true);
         echo "\"> Confirmation </a>
             
@@ -195,6 +199,6 @@ margin: 20px 0 20px;
 
     public function getDebugInfo()
     {
-        return array (  179 => 90,  173 => 87,  161 => 78,  155 => 74,  151 => 72,  147 => 70,  145 => 69,  136 => 63,  129 => 59,  122 => 55,  111 => 47,  94 => 33,  90 => 32,  84 => 28,  81 => 27,  75 => 21,  68 => 17,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  48 => 12,  44 => 11,  40 => 10,  36 => 9,  32 => 7,  29 => 6,);
+        return array (  183 => 91,  177 => 88,  165 => 79,  159 => 75,  155 => 73,  151 => 71,  149 => 70,  140 => 64,  133 => 60,  126 => 56,  115 => 48,  98 => 34,  94 => 33,  88 => 29,  85 => 28,  79 => 22,  72 => 18,  68 => 17,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  48 => 12,  44 => 11,  40 => 10,  36 => 9,  32 => 7,  29 => 6,);
     }
 }

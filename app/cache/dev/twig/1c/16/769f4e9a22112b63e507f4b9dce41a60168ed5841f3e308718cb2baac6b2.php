@@ -41,30 +41,34 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 11
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 12
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 12
-        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
+        // line 13
+        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listOffre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 13
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 15
+        // line 16
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 16
+        // line 17
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 17
+        // line 18
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -73,17 +77,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
 ";
     }
 
-    // line 26
+    // line 27
     public function block_content($context, array $blocks = array())
     {
-        // line 27
+        // line 28
         echo "          
              <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 28
+        // line 29
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/bootstrap2.css"), "html", null, true);
         echo "\" >
     <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 29
+        // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/dataTables.bootstrap.css"), "html", null, true);
         echo "\">
             <center>
@@ -95,31 +99,31 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
   
   
 <form method=\"post\" ";
-        // line 38
+        // line 39
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), 'enctype');
         echo " action=\"\">
 <table>
     
     
     ";
-        // line 42
+        // line 43
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["FormR"]) ? $context["FormR"] : $this->getContext($context, "FormR")), 'widget');
         echo "
     
     <tr>
         <td>
         ";
-        // line 46
+        // line 47
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "numpermis"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 49
+        // line 50
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "numpermis"), 'widget');
         echo "
             ";
-        // line 50
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "numpermis"), 'errors');
         echo "
         </td>
@@ -129,17 +133,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
     <tr>
         <td>
             ";
-        // line 57
+        // line 58
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "nom"), 'label');
         echo "
         </td>
         <td>
            ";
-        // line 60
+        // line 61
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "nom"), 'widget');
         echo "
            ";
-        // line 61
+        // line 62
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "nom"), 'errors');
         echo "
         </td>
@@ -149,17 +153,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
      <tr>
         <td>
             ";
-        // line 68
+        // line 69
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "prenom"), 'label');
         echo "
         </td>
         <td>
            ";
-        // line 71
+        // line 72
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "prenom"), 'widget');
         echo "
            ";
-        // line 72
+        // line 73
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "prenom"), 'errors');
         echo "
         </td>
@@ -169,17 +173,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
     <tr>
         <td>
         ";
-        // line 79
+        // line 80
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "idAgence"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 82
+        // line 83
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "idAgence"), 'widget');
         echo "
             ";
-        // line 83
+        // line 84
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "idAgence"), 'errors');
         echo "
         </td>
@@ -189,17 +193,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
     <tr>
         <td>
         ";
-        // line 90
+        // line 91
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "etat"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 93
+        // line 94
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "etat"), 'widget');
         echo "
             ";
-        // line 94
+        // line 95
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "etat"), 'errors');
         echo "
         </td>
@@ -209,17 +213,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
        <tr>
         <td>
         ";
-        // line 101
+        // line 102
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "note"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 104
+        // line 105
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "note"), 'widget');
         echo "
             ";
-        // line 105
+        // line 106
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "note"), 'errors');
         echo "
         </td>
@@ -229,17 +233,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
        <tr>
         <td>
         ";
-        // line 112
+        // line 113
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "telephone"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 115
+        // line 116
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "telephone"), 'widget');
         echo "
             ";
-        // line 116
+        // line 117
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "telephone"), 'errors');
         echo "
         </td>
@@ -249,17 +253,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
        <tr>
         <td>
         ";
-        // line 123
+        // line 124
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "adresse"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 126
+        // line 127
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "adresse"), 'widget');
         echo "
             ";
-        // line 127
+        // line 128
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "adresse"), 'errors');
         echo "
         </td>
@@ -269,17 +273,17 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
          <tr>
         <td>
         ";
-        // line 134
+        // line 135
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "cin"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 137
+        // line 138
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "cin"), 'widget');
         echo "
             ";
-        // line 138
+        // line 139
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["FormC"]) ? $context["FormC"] : $this->getContext($context, "FormC")), "cin"), 'errors');
         echo "
         </td>
@@ -317,6 +321,6 @@ class __TwigTemplate_1c16769f4e9a22112b63e507f4b9dce41a60168ed5841f3e308718cb2ba
 
     public function getDebugInfo()
     {
-        return array (  283 => 138,  279 => 137,  273 => 134,  263 => 127,  259 => 126,  253 => 123,  243 => 116,  239 => 115,  233 => 112,  223 => 105,  219 => 104,  213 => 101,  203 => 94,  199 => 93,  193 => 90,  183 => 83,  179 => 82,  173 => 79,  163 => 72,  159 => 71,  153 => 68,  143 => 61,  139 => 60,  133 => 57,  123 => 50,  119 => 49,  113 => 46,  106 => 42,  99 => 38,  87 => 29,  83 => 28,  80 => 27,  77 => 26,  68 => 17,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  48 => 12,  44 => 11,  40 => 10,  36 => 9,  32 => 7,  29 => 6,);
+        return array (  287 => 139,  283 => 138,  277 => 135,  267 => 128,  263 => 127,  257 => 124,  247 => 117,  243 => 116,  237 => 113,  227 => 106,  223 => 105,  217 => 102,  207 => 95,  203 => 94,  197 => 91,  187 => 84,  183 => 83,  177 => 80,  167 => 73,  163 => 72,  157 => 69,  147 => 62,  143 => 61,  137 => 58,  127 => 51,  123 => 50,  117 => 47,  110 => 43,  103 => 39,  91 => 30,  87 => 29,  84 => 28,  81 => 27,  72 => 18,  68 => 17,  64 => 16,  60 => 15,  56 => 14,  52 => 13,  48 => 12,  44 => 11,  40 => 10,  36 => 9,  32 => 7,  29 => 6,);
     }
 }

@@ -72,7 +72,7 @@ class __TwigTemplate_287a3d931dfdada948e3a78f42536426073dc19f9f1d467a816448332b9
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 25
-        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
+        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listOffre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
         // line 26

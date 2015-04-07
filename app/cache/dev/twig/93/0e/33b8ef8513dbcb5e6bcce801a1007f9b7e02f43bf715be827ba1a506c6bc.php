@@ -29,7 +29,15 @@ class __TwigTemplate_930e33b8ef8513dbcb5e6bcce801a1007f9b7e02f43bf715be827ba1a50
         // line 5
         $this->displayBlock('head', $context, $blocks);
         // line 30
-        echo "\t</head>
+        echo "                <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/bootstrap2.css"), "html", null, true);
+        echo "\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css1/dataTables.bootstrap.css"), "html", null, true);
+        echo "\">
+    
+\t</head>
         
         
         <body>
@@ -41,7 +49,7 @@ class __TwigTemplate_930e33b8ef8513dbcb5e6bcce801a1007f9b7e02f43bf715be827ba1a50
 \t\t\t\t\t<!---start-logo---->
 \t\t\t\t\t<div class=\"logo\">
 \t\t\t\t\t\t<a href=\"index.html\"><img src=\"";
-        // line 41
+        // line 44
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/logo1.png"), "html", null, true);
         echo "\" title=\"logo\" /></a>
 \t\t\t\t\t</div>
@@ -49,9 +57,9 @@ class __TwigTemplate_930e33b8ef8513dbcb5e6bcce801a1007f9b7e02f43bf715be827ba1a50
 \t\t\t\t\t<!---start-top-nav---->
                                         
                                         ";
-        // line 46
+        // line 49
         $this->displayBlock('navbar', $context, $blocks);
-        // line 48
+        // line 51
         echo "\t\t\t\t\t
 \t\t\t\t\t<div class=\"clear\"> </div>
 \t\t\t\t\t<!---End-top-nav---->
@@ -61,24 +69,24 @@ class __TwigTemplate_930e33b8ef8513dbcb5e6bcce801a1007f9b7e02f43bf715be827ba1a50
 \t\t\t<!--start-image-slider---->
 \t\t\t\t
                             ";
-        // line 56
+        // line 59
         $this->displayBlock('slider', $context, $blocks);
-        // line 58
+        // line 61
         echo "\t\t\t\t\t\t\t\t
 \t\t <!--End-image-slider---->
 \t\t <!---start-contnet---->
 \t\t <div class=\"content\">
                      ";
-        // line 62
-        $this->displayBlock('pub', $context, $blocks);
         // line 65
+        $this->displayBlock('pub', $context, $blocks);
+        // line 68
         echo "\t\t \t</div>
 \t\t \t<div class=\"mid-grids\">
 \t\t \t\t<div class=\"wrap\">
                                     ";
-        // line 68
-        $this->displayBlock('content', $context, $blocks);
         // line 71
+        $this->displayBlock('content', $context, $blocks);
+        // line 74
         echo "\t\t \t\t</div>
 \t\t \t</div>
 \t\t \t<div class=\"bottom-grids\">
@@ -166,32 +174,32 @@ class __TwigTemplate_930e33b8ef8513dbcb5e6bcce801a1007f9b7e02f43bf715be827ba1a50
                 ";
     }
 
-    // line 46
+    // line 49
     public function block_navbar($context, array $blocks = array())
     {
-        // line 47
+        // line 50
         echo "                                        ";
     }
 
-    // line 56
+    // line 59
     public function block_slider($context, array $blocks = array())
     {
-        // line 57
+        // line 60
         echo "                            ";
     }
 
-    // line 62
+    // line 65
     public function block_pub($context, array $blocks = array())
     {
-        // line 63
+        // line 66
         echo "\t\t \t
                                 ";
     }
 
-    // line 68
+    // line 71
     public function block_content($context, array $blocks = array())
     {
-        // line 69
+        // line 72
         echo "\t\t\t \t\t
                                         ";
     }
@@ -208,6 +216,6 @@ class __TwigTemplate_930e33b8ef8513dbcb5e6bcce801a1007f9b7e02f43bf715be827ba1a50
 
     public function getDebugInfo()
     {
-        return array (  195 => 69,  192 => 68,  187 => 63,  184 => 62,  180 => 57,  177 => 56,  173 => 47,  170 => 46,  148 => 12,  144 => 11,  140 => 10,  136 => 9,  132 => 8,  128 => 7,  125 => 6,  122 => 5,  80 => 68,  75 => 65,  73 => 62,  67 => 58,  65 => 56,  53 => 46,  45 => 41,  32 => 30,  24 => 1,  118 => 49,  103 => 36,  100 => 35,  90 => 28,  86 => 27,  82 => 71,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  62 => 21,  58 => 19,  55 => 48,  41 => 7,  36 => 5,  33 => 4,  30 => 5,);
+        return array (  203 => 72,  200 => 71,  195 => 66,  192 => 65,  188 => 60,  185 => 59,  181 => 50,  178 => 49,  156 => 12,  152 => 11,  148 => 10,  144 => 9,  140 => 8,  136 => 7,  133 => 6,  130 => 5,  90 => 74,  88 => 71,  83 => 68,  81 => 65,  75 => 61,  73 => 59,  63 => 51,  61 => 49,  53 => 44,  37 => 31,  32 => 30,  30 => 5,  24 => 1,);
     }
 }

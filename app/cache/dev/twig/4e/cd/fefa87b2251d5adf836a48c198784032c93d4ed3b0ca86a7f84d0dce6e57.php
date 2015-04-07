@@ -41,30 +41,34 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 8
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 9
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 9
-        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
+        // line 10
+        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listOffre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 10
+        // line 11
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 11
+        // line 12
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 12
+        // line 13
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 13
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -73,16 +77,16 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
 ";
     }
 
-    // line 21
+    // line 22
     public function block_content($context, array $blocks = array())
     {
-        // line 22
+        // line 23
         echo " 
             <center>
   
   <h1> Modifier une Voiture  </h1>
 <form method=\"post\" ";
-        // line 26
+        // line 27
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), 'enctype');
         echo ">
 <table>
@@ -92,17 +96,17 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
     <tr>
         <td>
         ";
-        // line 33
+        // line 34
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "matricule"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 36
+        // line 37
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "matricule"), 'widget');
         echo "
             ";
-        // line 37
+        // line 38
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "matricule"), 'errors');
         echo "
         </td>
@@ -112,17 +116,17 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
     <tr>
         <td>
             ";
-        // line 44
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "nbrplace"), 'label');
         echo "
         </td>
         <td>
            ";
-        // line 47
+        // line 48
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "nbrplace"), 'widget');
         echo "
            ";
-        // line 48
+        // line 49
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "nbrplace"), 'errors');
         echo "
         </td>
@@ -134,17 +138,17 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
     <tr>
         <td>
         ";
-        // line 57
+        // line 58
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "idAgence"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 60
+        // line 61
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "idAgence"), 'widget');
         echo "
             ";
-        // line 61
+        // line 62
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "idAgence"), 'errors');
         echo "
         </td>
@@ -158,17 +162,17 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
            <tr>
         <td>
         ";
-        // line 72
+        // line 73
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "typevoiture"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 75
+        // line 76
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "typevoiture"), 'widget');
         echo "
             ";
-        // line 76
+        // line 77
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "typevoiture"), 'errors');
         echo "
         </td>
@@ -182,17 +186,17 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
     <tr>
         <td>
         ";
-        // line 87
+        // line 88
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "etat"), 'label');
         echo "
         </td>
         <td>
             ";
-        // line 90
+        // line 91
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "etat"), 'widget');
         echo "
             ";
-        // line 91
+        // line 92
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), "etat"), 'errors');
         echo "
         </td>
@@ -213,7 +217,7 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
    
 </table>
    ";
-        // line 109
+        // line 110
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["Form"]) ? $context["Form"] : $this->getContext($context, "Form")), 'rest');
         echo "     
 </form>
@@ -234,6 +238,6 @@ class __TwigTemplate_4ecdfefa87b2251d5adf836a48c198784032c93d4ed3b0ca86a7f84d0dc
 
     public function getDebugInfo()
     {
-        return array (  217 => 109,  196 => 91,  192 => 90,  186 => 87,  172 => 76,  168 => 75,  162 => 72,  148 => 61,  144 => 60,  138 => 57,  126 => 48,  122 => 47,  116 => 44,  106 => 37,  102 => 36,  96 => 33,  86 => 26,  80 => 22,  77 => 21,  68 => 14,  64 => 13,  60 => 12,  56 => 11,  52 => 10,  48 => 9,  44 => 8,  40 => 7,  36 => 6,  32 => 4,  29 => 3,);
+        return array (  221 => 110,  200 => 92,  196 => 91,  190 => 88,  176 => 77,  172 => 76,  166 => 73,  152 => 62,  148 => 61,  142 => 58,  130 => 49,  126 => 48,  120 => 45,  110 => 38,  106 => 37,  100 => 34,  90 => 27,  84 => 23,  81 => 22,  72 => 15,  68 => 14,  64 => 13,  60 => 12,  56 => 11,  52 => 10,  48 => 9,  44 => 8,  40 => 7,  36 => 6,  32 => 4,  29 => 3,);
     }
 }
