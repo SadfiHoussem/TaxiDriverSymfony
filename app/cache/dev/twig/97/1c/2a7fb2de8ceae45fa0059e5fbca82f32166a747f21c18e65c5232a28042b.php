@@ -104,26 +104,30 @@ function SelectLigne(obj)
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 66
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 67
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 67
+        // line 68
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 68
+        // line 69
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_reservation_taxi");
         echo "\">Reserver</a></li>
                                                         <li><a href=\"";
-        // line 69
+        // line 70
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_chauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 70
+        // line 71
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_vehicule");
         echo "\">Vehicules</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 71
+        // line 72
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -133,16 +137,16 @@ function SelectLigne(obj)
 ";
     }
 
-    // line 78
+    // line 79
     public function block_content($context, array $blocks = array())
     {
-        // line 79
+        // line 80
         echo "\t\t\t \t\t    
 <form method=\"POST\" action=\"\">
 <h2>Choix du trajet</h2>
 
 ";
-        // line 83
+        // line 84
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "date"), 'widget');
         echo "
 
@@ -151,11 +155,11 @@ function SelectLigne(obj)
 Adresse Source :
 <select name=\"Adressesrc\">
   ";
-        // line 89
+        // line 90
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["dest"]) ? $context["dest"] : $this->getContext($context, "dest")));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 90
+            // line 91
             echo "  <option>";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["d"]) ? $context["d"] : $this->getContext($context, "d")), "nom"), "html", null, true);
             echo "</option>
@@ -164,17 +168,17 @@ Adresse Source :
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 92
+        // line 93
         echo "</select><br>
 
 Adresse Destination :
 <select name=\"Adressedest\">
   ";
-        // line 96
+        // line 97
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["dest"]) ? $context["dest"] : $this->getContext($context, "dest")));
         foreach ($context['_seq'] as $context["_key"] => $context["d"]) {
-            // line 97
+            // line 98
             echo "  <option>";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["d"]) ? $context["d"] : $this->getContext($context, "d")), "nom"), "html", null, true);
             echo "</option>
@@ -183,7 +187,7 @@ Adresse Destination :
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['d'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
+        // line 100
         echo "</select><br>
 
 <h1>Liste des taxi</h1>
@@ -198,34 +202,34 @@ Adresse Destination :
     </tr>
     
     ";
-        // line 112
+        // line 113
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["taxi"]) ? $context["taxi"] : $this->getContext($context, "taxi")));
         foreach ($context['_seq'] as $context["_key"] => $context["t"]) {
-            // line 113
+            // line 114
             echo "        <tr class=\"defaut\" onclick=\"SelectLigne(this)\">
             <td class=\"defaut\">";
-            // line 114
+            // line 115
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "nom"), "html", null, true);
             echo "</td>
             <td class=\"defaut\">";
-            // line 115
+            // line 116
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "prenom"), "html", null, true);
             echo "</td>
             <td class=\"defaut\">";
-            // line 116
+            // line 117
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "note"), "html", null, true);
             echo "</td>
             <td class=\"defaut\">";
-            // line 117
+            // line 118
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "typevoiture"), "html", null, true);
             echo "</td>
             <td class=\"defaut\">";
-            // line 118
+            // line 119
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "nbrplace"), "html", null, true);
             echo "</td>
             <td class=\"hide\" id=\"";
-            // line 119
+            // line 120
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "idtaxi"), "html", null, true);
             echo "\"></td>
         </tr>
@@ -234,7 +238,7 @@ Adresse Destination :
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 121
+        // line 122
         echo "        
     
 </table>  
@@ -243,7 +247,7 @@ Adresse Destination :
 <br>
 <input type=\"submit\" value=\"Ajouter\"/>
 ";
-        // line 128
+        // line 129
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
 </form>
@@ -262,6 +266,6 @@ Adresse Destination :
 
     public function getDebugInfo()
     {
-        return array (  247 => 128,  238 => 121,  229 => 119,  225 => 118,  221 => 117,  217 => 116,  213 => 115,  209 => 114,  206 => 113,  202 => 112,  187 => 99,  178 => 97,  174 => 96,  168 => 92,  159 => 90,  155 => 89,  146 => 83,  140 => 79,  137 => 78,  127 => 71,  123 => 70,  119 => 69,  115 => 68,  111 => 67,  107 => 66,  103 => 65,  99 => 64,  95 => 62,  92 => 61,  33 => 4,  30 => 3,);
+        return array (  251 => 129,  242 => 122,  233 => 120,  229 => 119,  225 => 118,  221 => 117,  217 => 116,  213 => 115,  210 => 114,  206 => 113,  191 => 100,  182 => 98,  178 => 97,  172 => 93,  163 => 91,  159 => 90,  150 => 84,  144 => 80,  141 => 79,  131 => 72,  127 => 71,  123 => 70,  119 => 69,  115 => 68,  111 => 67,  107 => 66,  103 => 65,  99 => 64,  95 => 62,  92 => 61,  33 => 4,  30 => 3,);
     }
 }

@@ -51,7 +51,6 @@
         
     {% for o in offres %}
           
-        
 		<div class="gallery-grid">
 	        <a href={{asset("images/slider1.jpg")}}><img src={{asset("images/slider1.jpg")}} alt=""></a>
                 <h4>{{o.sujetOffre}}</h4>
@@ -60,8 +59,7 @@
                 <div class="gallery-button"><a href="{{path("esprit_taxidriver_client_detail_offre",{'id':o.idoffre})}}">Plus de détails</a></div><p>
            
 		</div>
-                
-            
+          
     {% endfor %}    
 
     <div class="clear"> </div>

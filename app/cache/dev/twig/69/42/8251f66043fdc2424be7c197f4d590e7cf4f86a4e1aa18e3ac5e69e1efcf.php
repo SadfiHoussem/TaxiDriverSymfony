@@ -79,26 +79,30 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 33
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 34
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 34
+        // line 35
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 35
+        // line 36
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_reservation_taxi");
         echo "\">Reserver</a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 36
+        // line 37
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_chauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 37
+        // line 38
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_vehicule");
         echo "\">Vehicules</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 38
+        // line 39
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -108,14 +112,14 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 ";
     }
 
-    // line 46
+    // line 47
     public function block_content($context, array $blocks = array())
     {
-        // line 47
+        // line 48
         echo "<div class=\"gallery-grids\">
 \t\t\t\t\t\t<div class=\"gallery-grid\">
 \t\t\t\t\t\t\t<a href=";
-        // line 49
+        // line 50
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
         echo "><img src=";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
@@ -126,7 +130,7 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"gallery-grid grid2\">
 \t\t\t\t\t\t\t<a href=";
-        // line 55
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider3.jpg"), "html", null, true);
         echo "><img src=";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider3.jpg"), "html", null, true);
@@ -137,7 +141,7 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"gallery-grid\">
 \t\t\t\t\t\t\t<a href=";
-        // line 61
+        // line 62
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider2.jpg"), "html", null, true);
         echo "><img src=";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider2.jpg"), "html", null, true);
@@ -152,7 +156,7 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 \t\t\t\t\t<div class=\"gallery-grids\">
 \t\t\t\t\t\t<div class=\"gallery-grid\">
 \t\t\t\t\t\t\t<a href=";
-        // line 71
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider3.jpg"), "html", null, true);
         echo "><img src=";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider3.jpg"), "html", null, true);
@@ -163,7 +167,7 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"gallery-grid grid2\">
 \t\t\t\t\t\t\t<a href=";
-        // line 77
+        // line 78
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
         echo "><img src=";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
@@ -174,7 +178,7 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"gallery-grid\">
 \t\t\t\t\t\t\t<a href=";
-        // line 83
+        // line 84
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider2.jpg"), "html", null, true);
         echo "><img src=";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider2.jpg"), "html", null, true);
@@ -209,6 +213,6 @@ class __TwigTemplate_69428251f66043fdc2424be7c197f4d590e7cf4f86a4e1aa18e3ac5e69e
 
     public function getDebugInfo()
     {
-        return array (  178 => 83,  167 => 77,  156 => 71,  141 => 61,  130 => 55,  119 => 49,  115 => 47,  112 => 46,  102 => 38,  98 => 37,  94 => 36,  90 => 35,  86 => 34,  82 => 33,  78 => 32,  74 => 31,  70 => 29,  67 => 28,  55 => 18,  51 => 17,  37 => 6,  33 => 4,  30 => 3,);
+        return array (  182 => 84,  171 => 78,  160 => 72,  145 => 62,  134 => 56,  123 => 50,  119 => 48,  116 => 47,  106 => 39,  102 => 38,  98 => 37,  94 => 36,  90 => 35,  86 => 34,  82 => 33,  78 => 32,  74 => 31,  70 => 29,  67 => 28,  55 => 18,  51 => 17,  37 => 6,  33 => 4,  30 => 3,);
     }
 }

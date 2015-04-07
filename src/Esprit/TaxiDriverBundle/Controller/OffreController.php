@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use Esprit\TaxiDriverBundle\Form\OffreType;
 use Esprit\TaxiDriverBundle\Entity\Offre;
+use Esprit\TaxiDriverBundle\Entity\Commentaire;
 
 class OffreController extends Controller
 {
@@ -119,6 +120,7 @@ class OffreController extends Controller
         $em = $this->container->get('doctrine')->getEntityManager();
 
         $o= $em->getRepository('EspritTaxiDriverBundle:offre')->find($id);
+        
         $Request = $this->getRequest();
         
         if ($Request->getMethod() == 'POST') 
@@ -134,6 +136,7 @@ class OffreController extends Controller
             $commentaire->setIdclient($c);
             $of= $em->getRepository('EspritTaxiDriverBundle:offre')->findOneBy(array('idoffre'=>$id));
             $commentaire->setIdoffre($of);
+            $commentaire->setDate(new \DateTime());
             
             $em->persist($commentaire);
             $em->flush();

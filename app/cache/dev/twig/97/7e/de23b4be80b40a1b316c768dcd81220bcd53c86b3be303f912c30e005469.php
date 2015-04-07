@@ -7,7 +7,7 @@ class __TwigTemplate_977ede23b4be80b40a1b316c768dcd81220bcd53c86b3be303f912c30e0
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("EspritTaxiDriverBundle::layout.html.twig");
+        $this->parent = $this->env->loadTemplate("EspritTaxiDriverBundle::layout2.html.twig");
 
         $this->blocks = array(
             'navbar' => array($this, 'block_navbar'),
@@ -17,7 +17,7 @@ class __TwigTemplate_977ede23b4be80b40a1b316c768dcd81220bcd53c86b3be303f912c30e0
 
     protected function doGetParent(array $context)
     {
-        return "EspritTaxiDriverBundle::layout.html.twig";
+        return "EspritTaxiDriverBundle::layout2.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -39,28 +39,32 @@ class __TwigTemplate_977ede23b4be80b40a1b316c768dcd81220bcd53c86b3be303f912c30e0
         // line 9
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_a_propos");
         echo "\">A propos</a></li>
-\t\t\t\t\t\t\t<li><a href=\"";
+                                                        <li><a href=\"";
         // line 10
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+        // line 11
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li class=\"active\"><a href=\"";
-        // line 11
+        // line 12
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 12
-        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_reservation_taxi");
-        echo "\">Reserver</a></li>
-                                                        <li><a href=\"";
         // line 13
+        echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_reservation_taxi");
+        echo "\">Reservations</a></li>
+                                                        <li><a href=\"";
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_chauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_vehicule");
         echo "\">Vehicules</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 15
+        // line 16
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -74,98 +78,98 @@ class __TwigTemplate_977ede23b4be80b40a1b316c768dcd81220bcd53c86b3be303f912c30e0
     public function block_content($context, array $blocks = array())
     {
         // line 25
+        echo "</br></br></br>
+
+  <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap2.css"), "html", null, true);
+        echo "\" >
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/dataTables.bootstrap.css"), "html", null, true);
+        echo "\">
+    <script type=\"text/javascript\" language=\"javascript\" src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery-1.10.2.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" language=\"javascript\" src=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.dataTables.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" language=\"javascript\" src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/dataTables.bootstrap.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" language=\"javascript\" src=\"";
+        // line 32
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+    <script type=\"text/javascript\" charset=\"utf-8\">
+
+
+        \$(document).ready(function() {
+            \$('#example').dataTable();
+        } );
+    </script>
+    <style type=\"text/css\">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+    
+        
+<div class=\"wrap\">   
+    <div class=\"gallery-grids\">
+
+   
+        
+    ";
+        // line 52
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["offres"]) ? $context["offres"] : $this->getContext($context, "offres")));
+        foreach ($context['_seq'] as $context["_key"] => $context["o"]) {
+            // line 53
+            echo "          
+\t\t<div class=\"gallery-grid\">
+\t        <a href=";
+            // line 55
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
+            echo "><img src=";
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
+            echo " alt=\"\"></a>
+                <h4>";
+            // line 56
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["o"]) ? $context["o"] : $this->getContext($context, "o")), "sujetOffre"), "html", null, true);
+            echo "</h4>
+                <p>";
+            // line 57
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["o"]) ? $context["o"] : $this->getContext($context, "o")), "contenu"), "html", null, true);
+            echo "</br>
+                Agence : ";
+            // line 58
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["o"]) ? $context["o"] : $this->getContext($context, "o")), "idagence"), "nomagence"), "html", null, true);
+            echo "</br>
+                <div class=\"gallery-button\"><a href=\"";
+            // line 59
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_detail_offre", array("id" => $this->getAttribute((isset($context["o"]) ? $context["o"] : $this->getContext($context, "o")), "idoffre"))), "html", null, true);
+            echo "\">Plus de détails</a></div><p>
+           
+\t\t</div>
+          
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['o'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 63
         echo "    
 
-\t\t \t\t<div class=\"wrap\">
-\t\t\t \t\t<div class=\"mid-grid\">
-\t\t\t \t\t\t<h3>REPAIRS</h3>
-\t\t\t \t\t\t<a href=\"#\"><img src=";
-        // line 30
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/repair.png"), "html", null, true);
-        echo " title=\"repair\" /></a>
-\t\t\t \t\t\t<h4>It long established</h4>
-\t\t\t \t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
-\t\t\t \t\t\t<a class=\"button\" href=\"#\">More</a>
-\t\t\t \t\t</div>
-\t\t\t \t\t<div class=\"mid-grid\">
-\t\t\t \t\t\t<h3>SPARES</h3>
-\t\t\t \t\t\t<a href=\"#\"><img src=";
-        // line 37
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/spares.png"), "html", null, true);
-        echo " title=\"spares\" /></a>
-\t\t\t \t\t\t<h4>It long established</h4>
-\t\t\t \t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
-\t\t\t \t\t\t<a class=\"button\" href=\"#\">More</a>
-\t\t\t \t\t</div>
-\t\t\t \t\t<div class=\"mid-grid\">
-\t\t\t \t\t\t<h3>SALES</h3>
-\t\t\t \t\t\t<a href=\"#\"><img src=";
-        // line 44
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/sales.png"), "html", null, true);
-        echo "  title=\"sales\" /></a>
-\t\t\t \t\t\t<h4>It long established</h4>
-\t\t\t \t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-\t\t\t \t\t\t<a class=\"button\" href=\"#\">More</a>
-\t\t\t \t\t</div>
-\t\t\t \t\t<div class=\"clear\"> </div>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                       <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">
-  <!-- Indicators -->
-  <ol class=\"carousel-indicators\">
-    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>
-    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>
-    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>
-    <li data-target=\"#myCarousel\" data-slide-to=\"3\"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class=\"carousel-inner\" role=\"listbox\">
-    <div class=\"item active\">
-      <img src=\"";
-        // line 68
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/repair.png"), "html", null, true);
-        echo "\" alt=\"Chania\">
-    </div>
-
-    <div class=\"item\">
-      <img src=\"";
-        // line 72
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/spares.png"), "html", null, true);
-        echo "\" alt=\"Chania\">
-    </div>
-
-    <div class=\"item\">
-      <img src=\"";
-        // line 76
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/sales.png"), "html", null, true);
-        echo "\" alt=\"Flower\">
-    </div>
-
+    <div class=\"clear\"> </div>
     
-  </div>
-
-  <!-- Left and right controls -->
-  <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">
-    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>
-    <span class=\"sr-only\">Previous</span>
-  </a>
-  <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">
-    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>
-    <span class=\"sr-only\">Next</span>
-  </a>
+    <div class=\"clear\"> </div>
 </div>
-                                        
-                                        
-                                        
-                                        
-\t\t \t\t</div>
-\t\t \t
-    
+</div>  
+ 
 ";
     }
 
@@ -181,6 +185,6 @@ class __TwigTemplate_977ede23b4be80b40a1b316c768dcd81220bcd53c86b3be303f912c30e0
 
     public function getDebugInfo()
     {
-        return array (  145 => 76,  138 => 72,  131 => 68,  104 => 44,  94 => 37,  84 => 30,  77 => 25,  74 => 24,  64 => 15,  60 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  40 => 9,  36 => 8,  32 => 6,  29 => 5,);
+        return array (  165 => 63,  154 => 59,  150 => 58,  146 => 57,  142 => 56,  136 => 55,  132 => 53,  128 => 52,  105 => 32,  101 => 31,  97 => 30,  93 => 29,  89 => 28,  85 => 27,  81 => 25,  78 => 24,  68 => 16,  64 => 15,  60 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  40 => 9,  36 => 8,  32 => 6,  29 => 5,);
     }
 }

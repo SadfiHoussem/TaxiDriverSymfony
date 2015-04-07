@@ -358,6 +358,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\ReservationController::consulterConfResAction',  '_route' => 'esprit_taxidriver_client_consul_conf_res',);
             }
 
+            // esprit_taxidriver_client_detail_offre
+            if (0 === strpos($pathinfo, '/client/detailoffre') && preg_match('#^/client/detailoffre/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_client_detail_offre')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::detailoffreAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/respAgence')) {
