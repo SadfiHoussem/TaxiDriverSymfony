@@ -115,6 +115,18 @@ esprit_taxidriver_resp_agence_deleteTrajet:
     pattern:  /respAgence/deleteTrajet/{idtrajet}
     defaults: { _controller:  EspritTaxiDriverBundle:Trajet:deleteTrajet }
     
+esprit_taxidriver_resp_agence_listOffre:
+    pattern:  /respAgence/listOffre
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:listOffre }
+esprit_taxidriver_resp_agence_updateOffre:
+    pattern:  /respAgence/updateOffre/{idOffre}
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:updateOffre }
+esprit_taxidriver_resp_agence_deleteOffre:
+    pattern:  /respAgence/deleteOffre/{idoffre}
+    defaults: { _controller:  EspritTaxiDriverBundle:Offre:deleteOffre }
+esprit_taxidriver_resp_agence_ajoutOffre:
+    pattern:  /respAgence/ajoutOffre
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:ajoutOffre }
 
     
     
