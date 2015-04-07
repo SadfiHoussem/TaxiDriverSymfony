@@ -1,0 +1,95 @@
+{# empty Twig template #}
+{#   
+{% extends "MyAppCinemaBundle::layout.html.twig" %}
+
+     {% block head %}
+         <title>{% block title %}{{parent()}}-Mise a Jour{% endblock %}</title>
+             {% block stylesheet %}
+            <link rel="stylesheet" href="{{asset('css/css.css')}}"
+        {% endblock %}
+     {% endblock %}
+  
+
+       
+    {% block monform %}
+       {# <h1>Mise à jour d'un Film </h1>
+<form action="" method="post">
+    {{form_widget(Form)}}
+    <input type="submit" value="Metter à jour "/>
+    
+</form>  
+  {% endblock %}   #}
+  
+  
+   
+  <h1> Mise à jour d'une Offre </h1>
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.sujetoffre)}}
+        </td>
+        <td>
+            {{form_widget(Form.sujetoffre)}}
+            {{form_errors(Form.sujetoffre)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+            {{ form_label(Form.contenu)}}
+        </td>
+        <td>
+           {{ form_widget(Form.contenu)}}
+           {{ form_errors(Form.contenu)}}
+        </td>
+    </tr>
+   
+    
+     <tr>
+        <td>
+            {{ form_label(Form.date)}}
+        </td>
+        <td>
+           {{ form_widget(Form.date)}}
+           {{ form_errors(Form.date)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.idAgence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idAgence)}}
+            {{form_errors(Form.idAgence)}}
+        </td>
+    </tr>
+    
+    
+        
+   
+    
+    
+    <tr>
+        <td>
+            <input type="submit" value="Valider"/>
+        </td>
+        <td>
+             <input type="reset" value="Annuler"/>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+   
+   {#
+{% endblock %}
+#}

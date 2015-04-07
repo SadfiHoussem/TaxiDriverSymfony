@@ -4,19 +4,23 @@
 {% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
 
      {% block navbar %}
+         
+
+         
+         
 <div class="top-nav">
 						<ul>
                                                     <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
 							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
-							<li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
-                                                        <li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
-							<li><a href="{{path("esprit_taxidriver_resp_agence_listOffre")}}">Offres</a></li>
+                                                        <li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listOffre")}}">Offres</a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
-                                                        <li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
 							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
-							<div class="clear"> </div>
+						<div class="clear"> </div>
 						</ul>
 					</div>
 {% endblock %}
@@ -25,8 +29,11 @@
 
        
         {% block content %}
+            
+                     
+
         
-           <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+<link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
     <script type="text/javascript" language="javascript" src="{{ asset('js1/jquery-1.10.2.min.js') }}"></script>
     <script type="text/javascript" language="javascript" src="{{ asset('js1/jquery.dataTables.min.js')}}"></script>
@@ -54,41 +61,40 @@
 
 <table id="example" class="display" cellspacing="20" width="100%">
     <thead>  
-    <tr><th>Matricule</th>
-        <th>Agence</th>
-        <th>etat </th>
-        <th>Type </th>
-        <th>nombre de place </th>
+           
+    <tr><th>ID</th>
+        <th>Agence  </th>
+        <th>Sujet Offre </th>
+        <th>Contenu</th>
+     
+       <th>Date</th>
     <th> Modifier </th>
      <th> Supprimer </th>
         </tr>
-          </thead>
+        </thead>
     <tbody>
-{% for V in voiture %}
+{% for  of in offre %}
         <tr>
-            <td>{{V.matricule}}</td>
-              <td>{{V.nomagence}}</td>
-             <td>    {% if V.etat==1 %}
-	Disponible
-	{% else %}
-	Nom Dsiponible
-	{% endif %}
-        </td>
-                    <td>{{V.typevoiture}}</td>
-             <td>{{V.nbrplace}}</td>
+            <td>{{of.idoffre}}</td>
+            <td>{{of.nomagence}}</td>
+            <td>{{of.sujetoffre}}</td>
+             <td>{{of.contenu}}</td>
+                  <td>{{of.date|date('d/m/Y')}}</td>
+          
+            
         
-         
-             <td><a href="{{path("esprit_taxidriver_resp_agence_updateVoiture",{'matricule':V.matricule})}}"> Modifier </a></td>
-         <td><a href="{{path("esprit_taxidriver_resp_agence_deleteVoiture",{'matricule':V.matricule})}}"> Supprimer </a></td>   
+             <td><a href="{{path("esprit_taxidriver_resp_agence_updateOffre",{'idOffre':of.idoffre})}}"> Modifier </a></td>
+          
+         <td><a href="{{path("esprit_taxidriver_resp_agence_deleteOffre",{'idoffre':of.idoffre})}}"> Supprimer </a></td>   
    
-           
+          
         </tr>
-        {% endfor %} 
+{% endfor %} 
+
 </tbody>
 </table>
-
 <center>
-       <a class="btn btn-primary" role="btn" href="{{path("esprit_taxidriver_resp_agence_ajoutVoiture")}}"> Ajouter une voiture  <img src="{{ asset('images/Karhba.png')}}"/> </a></button>
+       <a class="btn btn-primary" role="btn" href="{{path("esprit_taxidriver_resp_agence_ajoutOffre")}}"> Ajouter une Nouvelle Offre <img src="{{ asset('images/ajout.png')}}"/> </a></button>
 </center>
 </div>
 <script type="text/javascript">
@@ -97,6 +103,8 @@
             .removeClass( 'display' )
             .addClass('table table-striped table-bordered');
 </script>
+   
 
 
+  
 {% endblock %}  

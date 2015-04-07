@@ -8,17 +8,17 @@
 						<ul>
                                                     <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
 							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
-							<li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
-                                                        <li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
-							<li><a href="{{path("esprit_taxidriver_resp_agence_listOffre")}}">Offres</a></li>
+                                                        <li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listOffre")}}">Offres</a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
-                                                        <li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
 							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
-							<div class="clear"> </div>
-						</ul>
-					</div>
+						<div class="clear"> </div>
+                                                </ul>
+</div>
 {% endblock %}
     
 
@@ -29,9 +29,8 @@
              <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
             <center>
-  
-   
-  <h1> Ajouter une Voiture  </h1>
+    
+  <h1> Ajouter une offre </h1>
 <form method="post" {{ form_enctype(Form) }}>
 <table>
     
@@ -39,27 +38,24 @@
     
     <tr>
         <td>
-        {{form_label(Form.matricule)}}
+        {{form_label(Form.sujetoffre)}}
         </td>
         <td>
-            {{form_widget(Form.matricule)}}
-            {{form_errors(Form.matricule)}}
+            {{form_widget(Form.sujetoffre)}}
+            {{form_errors(Form.sujetoffre)}}
         </td>
     </tr>
     
     
     <tr>
         <td>
-            {{ form_label(Form.nbrplace)}}
+            {{ form_label(Form.contenu)}}
         </td>
         <td>
-           {{ form_widget(Form.nbrplace)}}
-           {{ form_errors(Form.nbrplace)}}
+           {{ form_widget(Form.contenu)}}
+           {{ form_errors(Form.contenu)}}
         </td>
     </tr>
-   
- 
-    
     
     <tr>
         <td>
@@ -75,35 +71,6 @@
         
    
     
-    
-           <tr>
-        <td>
-        {{form_label(Form.typevoiture)}}
-        </td>
-        <td>
-            {{form_widget(Form.typevoiture)}}
-            {{form_errors(Form.typevoiture)}}
-        </td>
-    </tr>
-
- 
-
-    
-    
-     
-    <tr>
-        <td>
-        {{form_label(Form.etat)}}
-        </td>
-        <td>
-            {{form_widget(Form.etat)}}
-            {{form_errors(Form.etat)}}
-        </td>
-    </tr>
-    
-   
-    
-    
     <tr>
         <td>
             <input type="submit" value="Valider"/>
@@ -115,8 +82,8 @@
 
    
 </table>
-   {{form_rest(Form)}}     
+       
 </form>
-   
-  
+            </center>
+
 {% endblock %}
