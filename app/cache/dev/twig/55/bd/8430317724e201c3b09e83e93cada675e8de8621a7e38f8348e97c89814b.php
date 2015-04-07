@@ -39,32 +39,36 @@ class __TwigTemplate_55bd8430317724e201c3b09e83e93cada675e8de8621a7e38f8348e97c8
         // line 7
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_a_propos");
         echo "\">A propos</a></li>
-\t\t\t\t\t\t\t<li><a href=\"";
+                                                        <li><a href=\"";
         // line 8
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+        // line 9
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 9
+        // line 10
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 10
+        // line 11
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 11
+        // line 12
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 12
+        // line 13
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 13
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -74,22 +78,22 @@ class __TwigTemplate_55bd8430317724e201c3b09e83e93cada675e8de8621a7e38f8348e97c8
 ";
     }
 
-    // line 21
+    // line 22
     public function block_slider($context, array $blocks = array())
     {
-        // line 22
+        // line 23
         echo "    <div class=\"slider\">\t\t\t\t\t     
 \t\t\t\t\t<div class=\"camera_wrap camera_azure_skin\" id=\"camera_wrap_1\">\t\t\t\t\t\t\t\t\t           
 \t\t\t\t\t\t<div data-src=\"";
-        // line 24
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider3.jpg"), "html", null, true);
         echo "\">  </div> 
 \t\t\t\t\t\t<div data-src=\"";
-        // line 25
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider2.jpg"), "html", null, true);
         echo "\">  </div>
 \t\t\t\t\t\t<div data-src=\"";
-        // line 26
+        // line 27
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/slider1.jpg"), "html", null, true);
         echo "\">  </div>
 \t\t\t\t\t\t
@@ -111,6 +115,6 @@ class __TwigTemplate_55bd8430317724e201c3b09e83e93cada675e8de8621a7e38f8348e97c8
 
     public function getDebugInfo()
     {
-        return array (  93 => 26,  89 => 25,  85 => 24,  81 => 22,  78 => 21,  68 => 14,  64 => 13,  60 => 12,  56 => 11,  52 => 10,  48 => 9,  44 => 8,  40 => 7,  36 => 6,  32 => 4,  29 => 3,);
+        return array (  97 => 27,  93 => 26,  89 => 25,  85 => 23,  82 => 22,  72 => 15,  68 => 14,  64 => 13,  60 => 12,  56 => 11,  52 => 10,  48 => 9,  44 => 8,  40 => 7,  36 => 6,  32 => 4,  29 => 3,);
     }
 }

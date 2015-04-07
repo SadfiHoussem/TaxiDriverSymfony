@@ -41,30 +41,34 @@ class __TwigTemplate_39fa0bbd85d63c52974ad1cb022995143e8b601e951c2a4cca1b0e66f28
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 10
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 11
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li class=\"active\"><a href=\"";
-        // line 11
+        // line 12
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 12
+        // line 13
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 13
+        // line 14
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 14
+        // line 15
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 15
+        // line 16
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 16
+        // line 17
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -74,17 +78,17 @@ class __TwigTemplate_39fa0bbd85d63c52974ad1cb022995143e8b601e951c2a4cca1b0e66f28
 ";
     }
 
-    // line 25
+    // line 26
     public function block_content($context, array $blocks = array())
     {
-        // line 26
+        // line 27
         echo "    
 
 \t\t \t\t<div class=\"wrap\">
 \t\t\t \t\t<div class=\"mid-grid\">
 \t\t\t \t\t\t<h3>REPAIRS</h3>
 \t\t\t \t\t\t<a href=\"#\"><img src=";
-        // line 31
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/repair.png"), "html", null, true);
         echo " title=\"repair\" /></a>
 \t\t\t \t\t\t<h4>It long established</h4>
@@ -94,7 +98,7 @@ class __TwigTemplate_39fa0bbd85d63c52974ad1cb022995143e8b601e951c2a4cca1b0e66f28
 \t\t\t \t\t<div class=\"mid-grid\">
 \t\t\t \t\t\t<h3>SPARES</h3>
 \t\t\t \t\t\t<a href=\"#\"><img src=";
-        // line 38
+        // line 39
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/spares.png"), "html", null, true);
         echo " title=\"spares\" /></a>
 \t\t\t \t\t\t<h4>It long established</h4>
@@ -104,7 +108,7 @@ class __TwigTemplate_39fa0bbd85d63c52974ad1cb022995143e8b601e951c2a4cca1b0e66f28
 \t\t\t \t\t<div class=\"mid-grid\">
 \t\t\t \t\t\t<h3>SALES</h3>
 \t\t\t \t\t\t<a href=\"#\"><img src=";
-        // line 45
+        // line 46
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/sales.png"), "html", null, true);
         echo "  title=\"sales\" /></a>
 \t\t\t \t\t\t<h4>It long established</h4>
@@ -131,21 +135,21 @@ class __TwigTemplate_39fa0bbd85d63c52974ad1cb022995143e8b601e951c2a4cca1b0e66f28
   <div class=\"carousel-inner\" role=\"listbox\">
     <div class=\"item active\">
       <img src=\"";
-        // line 69
+        // line 70
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/repair.png"), "html", null, true);
         echo "\" alt=\"Chania\">
     </div>
 
     <div class=\"item\">
       <img src=\"";
-        // line 73
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/spares.png"), "html", null, true);
         echo "\" alt=\"Chania\">
     </div>
 
     <div class=\"item\">
       <img src=\"";
-        // line 77
+        // line 78
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/sales.png"), "html", null, true);
         echo "\" alt=\"Flower\">
     </div>
@@ -185,6 +189,6 @@ class __TwigTemplate_39fa0bbd85d63c52974ad1cb022995143e8b601e951c2a4cca1b0e66f28
 
     public function getDebugInfo()
     {
-        return array (  149 => 77,  142 => 73,  135 => 69,  108 => 45,  98 => 38,  88 => 31,  81 => 26,  78 => 25,  68 => 16,  64 => 15,  60 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  40 => 9,  36 => 8,  32 => 6,  29 => 5,);
+        return array (  153 => 78,  146 => 74,  139 => 70,  112 => 46,  102 => 39,  92 => 32,  85 => 27,  82 => 26,  72 => 17,  68 => 16,  64 => 15,  60 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  40 => 9,  36 => 8,  32 => 6,  29 => 5,);
     }
 }

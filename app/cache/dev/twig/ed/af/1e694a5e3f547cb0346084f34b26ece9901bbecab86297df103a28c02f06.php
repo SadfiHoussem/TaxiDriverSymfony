@@ -85,30 +85,34 @@ class __TwigTemplate_edaf1e694a5e3f547cb0346084f34b26ece9901bbecab86297df103a28c
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 33
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 34
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 34
+        // line 35
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 35
+        // line 36
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 36
+        // line 37
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 37
+        // line 38
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li class=\"active\"><a href=\"";
-        // line 38
+        // line 39
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 39
+        // line 40
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -117,10 +121,10 @@ class __TwigTemplate_edaf1e694a5e3f547cb0346084f34b26ece9901bbecab86297df103a28c
 ";
     }
 
-    // line 48
+    // line 49
     public function block_content($context, array $blocks = array())
     {
-        // line 49
+        // line 50
         echo "            
 
 <br>
@@ -147,67 +151,67 @@ class __TwigTemplate_edaf1e694a5e3f547cb0346084f34b26ece9901bbecab86297df103a28c
     </thead>
     <tbody>
 ";
-        // line 74
+        // line 75
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["trajet"]) ? $context["trajet"] : $this->getContext($context, "trajet")));
         foreach ($context['_seq'] as $context["_key"] => $context["t"]) {
-            // line 75
+            // line 76
             echo "    
     ";
-            // line 76
+            // line 77
             if (($this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "etat") == 0)) {
-                // line 77
+                // line 78
                 echo "        <tr>
             <td>";
-                // line 78
+                // line 79
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "idtrajet"), "html", null, true);
                 echo "</td>
             <td>";
-                // line 79
+                // line 80
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "idagence"), "nomagence"), "html", null, true);
                 echo "</td>
                <td>";
-                // line 80
+                // line 81
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "adressedep"), "html", null, true);
                 echo "</td>
                   <td>";
-                // line 81
+                // line 82
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "adressedest"), "html", null, true);
                 echo "</td>
                      <td>";
-                // line 82
+                // line 83
                 echo twig_escape_filter($this->env, $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "cout"), "html", null, true);
                 echo "</td>
                      
                      
             
             <td>    ";
-                // line 86
+                // line 87
                 if (($this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "etat") == 1)) {
-                    // line 87
+                    // line 88
                     echo "\tConfirmé
 \t";
                 } else {
-                    // line 89
+                    // line 90
                     echo "\tNon encore Confirmé
 \t";
                 }
-                // line 91
+                // line 92
                 echo "        </td>
     
         
                <td>    <a  class=\"btn bg-primary\"  role=\"btn\" href=\"";
-                // line 94
+                // line 95
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_confirmationtrajet", array("idtrajet" => $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "idtrajet"))), "html", null, true);
                 echo "\"> Confirmation </a> </td>
    
          <td>    <a  class=\"btn bg-primary\"  role=\"btn\" href=\"";
-                // line 96
+                // line 97
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_deleteTrajet", array("idtrajet" => $this->getAttribute((isset($context["t"]) ? $context["t"] : $this->getContext($context, "t")), "idtrajet"))), "html", null, true);
                 echo "\"> Supprimer </a> </td>   
             ";
             }
-            // line 97
+            // line 98
             echo "        
             
 
@@ -219,7 +223,7 @@ class __TwigTemplate_edaf1e694a5e3f547cb0346084f34b26ece9901bbecab86297df103a28c
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['t'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 103
+        // line 104
         echo " 
 
 </tbody>
@@ -250,6 +254,6 @@ class __TwigTemplate_edaf1e694a5e3f547cb0346084f34b26ece9901bbecab86297df103a28c
 
     public function getDebugInfo()
     {
-        return array (  223 => 103,  211 => 97,  206 => 96,  201 => 94,  196 => 91,  192 => 89,  188 => 87,  186 => 86,  179 => 82,  175 => 81,  171 => 80,  167 => 79,  163 => 78,  160 => 77,  158 => 76,  155 => 75,  151 => 74,  124 => 49,  121 => 48,  112 => 39,  108 => 38,  104 => 37,  100 => 36,  96 => 35,  92 => 34,  88 => 33,  84 => 32,  80 => 31,  76 => 29,  73 => 28,  54 => 12,  50 => 11,  46 => 10,  42 => 9,  38 => 8,  33 => 7,  30 => 6,);
+        return array (  227 => 104,  215 => 98,  210 => 97,  205 => 95,  200 => 92,  196 => 90,  192 => 88,  190 => 87,  183 => 83,  179 => 82,  175 => 81,  171 => 80,  167 => 79,  164 => 78,  162 => 77,  159 => 76,  155 => 75,  128 => 50,  125 => 49,  116 => 40,  112 => 39,  108 => 38,  104 => 37,  100 => 36,  96 => 35,  92 => 34,  88 => 33,  84 => 32,  80 => 31,  76 => 29,  73 => 28,  54 => 12,  50 => 11,  46 => 10,  42 => 9,  38 => 8,  33 => 7,  30 => 6,);
     }
 }

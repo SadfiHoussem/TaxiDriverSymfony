@@ -8,7 +8,8 @@
 						<ul>
                                                     <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
 							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
-							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
 							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
                                                         <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
                                                         <li class="active"><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
@@ -33,142 +34,109 @@
   <br> 
   <br>
   
-<form method="post" {{ form_enctype(Form) }}>
+  
+  
+<form method="post" {{ form_enctype(FormC) }} action="">
 <table>
     
     
+    {{ form_widget(FormR) }}
     
     <tr>
         <td>
-        {{form_label(Form.numpermis)}}
+        {{form_label(FormC.numpermis)}}
         </td>
         <td>
-            {{form_widget(Form.numpermis)}}
-            {{form_errors(Form.numpermis)}}
+            {{form_widget(FormC.numpermis)}}
+            {{form_errors(FormC.numpermis)}}
         </td>
     </tr>
     
     
     <tr>
         <td>
-            {{ form_label(Form.nom)}}
+            {{ form_label(FormC.nom)}}
         </td>
         <td>
-           {{ form_widget(Form.nom)}}
-           {{ form_errors(Form.nom)}}
+           {{ form_widget(FormC.nom)}}
+           {{ form_errors(FormC.nom)}}
         </td>
     </tr>
    
     
      <tr>
         <td>
-            {{ form_label(Form.prenom)}}
+            {{ form_label(FormC.prenom)}}
         </td>
         <td>
-           {{ form_widget(Form.prenom)}}
-           {{ form_errors(Form.prenom)}}
+           {{ form_widget(FormC.prenom)}}
+           {{ form_errors(FormC.prenom)}}
         </td>
     </tr>
     
     
     <tr>
         <td>
-        {{form_label(Form.idAgence)}}
+        {{form_label(FormC.idAgence)}}
         </td>
         <td>
-            {{form_widget(Form.idAgence)}}
-            {{form_errors(Form.idAgence)}}
+            {{form_widget(FormC.idAgence)}}
+            {{form_errors(FormC.idAgence)}}
         </td>
     </tr>
-    
-    
-        
-    <tr>
-        <td>
-        {{form_label(Form.email)}}
-        </td>
-        <td>
-            {{form_widget(Form.email)}}
-            {{form_errors(Form.email)}}
-        </td>
-    </tr>
-    
-    
-           <tr>
-        <td>
-        {{form_label(Form.login)}}
-        </td>
-        <td>
-            {{form_widget(Form.login)}}
-            {{form_errors(Form.login)}}
-        </td>
-    </tr>
-
-    
-          <tr>
-        <td>
-        {{form_label(Form.pwd)}}
-        </td>
-        <td>
-            {{form_widget(Form.pwd)}}
-            {{form_errors(Form.pwd)}}
-        </td>
-    </tr>
-
-    
     
      
     <tr>
         <td>
-        {{form_label(Form.etat)}}
+        {{form_label(FormC.etat)}}
         </td>
         <td>
-            {{form_widget(Form.etat)}}
-            {{form_errors(Form.etat)}}
-        </td>
-    </tr>
-    
-    
-       <tr>
-        <td>
-        {{form_label(Form.note)}}
-        </td>
-        <td>
-            {{form_widget(Form.note)}}
-            {{form_errors(Form.note)}}
+            {{form_widget(FormC.etat)}}
+            {{form_errors(FormC.etat)}}
         </td>
     </tr>
     
     
        <tr>
         <td>
-        {{form_label(Form.telephone)}}
+        {{form_label(FormC.note)}}
         </td>
         <td>
-            {{form_widget(Form.telephone)}}
-            {{form_errors(Form.telephone)}}
+            {{form_widget(FormC.note)}}
+            {{form_errors(FormC.note)}}
         </td>
     </tr>
     
     
        <tr>
         <td>
-        {{form_label(Form.adresse)}}
+        {{form_label(FormC.telephone)}}
         </td>
         <td>
-            {{form_widget(Form.adresse)}}
-            {{form_errors(Form.adresse)}}
+            {{form_widget(FormC.telephone)}}
+            {{form_errors(FormC.telephone)}}
+        </td>
+    </tr>
+    
+    
+       <tr>
+        <td>
+        {{form_label(FormC.adresse)}}
+        </td>
+        <td>
+            {{form_widget(FormC.adresse)}}
+            {{form_errors(FormC.adresse)}}
         </td>
     </tr>
     
     
          <tr>
         <td>
-        {{form_label(Form.cin)}}
+        {{form_label(FormC.cin)}}
         </td>
         <td>
-            {{form_widget(Form.cin)}}
-            {{form_errors(Form.cin)}}
+            {{form_widget(FormC.cin)}}
+            {{form_errors(FormC.cin)}}
         </td>
     </tr>
     
@@ -185,7 +153,7 @@
 
    
 </table>
-   {{form_rest(Form)}}     
+        
 </form>
             </center>
   

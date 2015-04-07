@@ -454,6 +454,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_resp_agence_deleteTrajet')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\TrajetController::deleteTrajetAction',));
             }
 
+            // esprit_taxidriver_resp_agence_listOffre
+            if ($pathinfo === '/respAgence/listOffre') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::listOffreAction',  '_route' => 'esprit_taxidriver_resp_agence_listOffre',);
+            }
+
+            // esprit_taxidriver_resp_agence_updateOffre
+            if (0 === strpos($pathinfo, '/respAgence/updateOffre') && preg_match('#^/respAgence/updateOffre/(?P<idOffre>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_resp_agence_updateOffre')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::updateOffreAction',));
+            }
+
+            // esprit_taxidriver_resp_agence_deleteOffre
+            if (0 === strpos($pathinfo, '/respAgence/deleteOffre') && preg_match('#^/respAgence/deleteOffre/(?P<idoffre>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_resp_agence_deleteOffre')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::deleteOffreAction',));
+            }
+
+            // esprit_taxidriver_resp_agence_ajoutOffre
+            if ($pathinfo === '/respAgence/ajoutOffre') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::ajoutOffreAction',  '_route' => 'esprit_taxidriver_resp_agence_ajoutOffre',);
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

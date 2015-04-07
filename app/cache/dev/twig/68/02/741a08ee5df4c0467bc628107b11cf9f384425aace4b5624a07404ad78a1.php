@@ -67,30 +67,34 @@ class __TwigTemplate_6802741a08ee5df4c0467bc628107b11cf9f384425aace4b5624a07404a
         echo "\">A propos</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
         // line 23
+        echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
+        echo "\">Profile</a></li>
+                                                        <li><a href=\"";
+        // line 24
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_agence");
         echo "\">Nos agences</a></li>
 \t\t\t\t\t\t\t<li><a href=\"";
-        // line 24
+        // line 25
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_offre");
         echo "\">Offres</a></li>
                                                         <li><a href=\"";
-        // line 25
+        // line 26
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listRNCreclamation");
         echo "\"> Reclamations  </a></li>
                                                         <li><a href=\"";
-        // line 26
+        // line 27
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listChauffeur");
         echo "\">Chauffeurs</a></li>
                                                         <li><a href=\"";
-        // line 27
+        // line 28
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listVoiture");
         echo "\">Vehicules</a></li>
                                                         <li><a href=\"";
-        // line 28
+        // line 29
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_resp_agence_listTrajet");
         echo "\"> Trajet </a></li>
 \t\t\t\t\t\t\t<li class=\"active\"><a href=\"";
-        // line 29
+        // line 30
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_contact");
         echo "\">Contact</a></li>
 \t\t\t\t\t\t\t<div class=\"clear\"> </div>
@@ -100,10 +104,10 @@ class __TwigTemplate_6802741a08ee5df4c0467bc628107b11cf9f384425aace4b5624a07404a
 ";
     }
 
-    // line 36
+    // line 37
     public function block_content($context, array $blocks = array())
     {
-        // line 37
+        // line 38
         echo "
 \t\t
 \t\t\t
@@ -118,7 +122,7 @@ class __TwigTemplate_6802741a08ee5df4c0467bc628107b11cf9f384425aace4b5624a07404a
 \t\t\t    \t \t<h3>Find Us Here</h3>
 \t\t\t    \t \t\t<div class=\"map\">
 \t\t\t\t\t   \t\t\t<iframe width=\"100%\" height=\"175\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"";
-        // line 50
+        // line 51
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("https://www.google.tn/maps/place/Esprit+Pr%C3%A9pa/@36.898482,10.189762,17z/data=!3m1!4b1!4m2!3m1!1s0x12e2cb7454c6ed51:0xcb5e71cbf91ec526"), "html", null, true);
         echo "\"></iframe><br><small><a href=\"https://www.google.fr/maps/place/ESPRIT/@36.8991406,10.1895187,17z/data=!4m7!1m4!3m3!1s0x12e2cb7454c6ed51:0x683b3ab5565cd357!2sESPRIT!3b1!3m1!1s0x12e2cb7454c6ed51:0x683b3ab5565cd357\" style=\"color:#666;text-align:left;font-size:12px\">View Larger Map</a></small>
 \t\t\t\t\t   \t\t</div>
@@ -180,6 +184,6 @@ class __TwigTemplate_6802741a08ee5df4c0467bc628107b11cf9f384425aace4b5624a07404a
 
     public function getDebugInfo()
     {
-        return array (  122 => 50,  107 => 37,  104 => 36,  94 => 29,  90 => 28,  86 => 27,  82 => 26,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  62 => 21,  58 => 19,  55 => 18,  41 => 7,  36 => 5,  33 => 4,  30 => 3,);
+        return array (  126 => 51,  111 => 38,  108 => 37,  98 => 30,  94 => 29,  90 => 28,  86 => 27,  82 => 26,  78 => 25,  74 => 24,  70 => 23,  66 => 22,  62 => 21,  58 => 19,  55 => 18,  41 => 7,  36 => 5,  33 => 4,  30 => 3,);
     }
 }

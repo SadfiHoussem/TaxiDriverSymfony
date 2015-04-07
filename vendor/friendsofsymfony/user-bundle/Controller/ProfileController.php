@@ -143,8 +143,7 @@ class ProfileController extends Controller
                 $em->persist($user);
                 $em->persist($chauffeur);
                 $em->flush();
-
-                
+   
                 return $this->render('FOSUserBundle:Profile:show_content_chauffeur.html.twig', array(
                     'user' => $user,'chauffeur'=>$chauffeur
             ));
