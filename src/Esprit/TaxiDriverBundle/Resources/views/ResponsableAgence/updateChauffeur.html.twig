@@ -1,31 +1,41 @@
-{# empty Twig template #}
-{#   
-{% extends "MyAppCinemaBundle::layout.html.twig" %}
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
 
-     {% block head %}
-         <title>{% block title %}{{parent()}}-Mise a Jour{% endblock %}</title>
-             {% block stylesheet %}
-            <link rel="stylesheet" href="{{asset('css/css.css')}}"
-        {% endblock %}
-     {% endblock %}
-  
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
+							<li class="active"><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_resp_agence_listOffre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
 
        
-    {% block monform %}
-       {# <h1>Mise à jour d'un Film </h1>
-<form action="" method="post">
-    {{form_widget(Form)}}
-    <input type="submit" value="Metter à jour "/>
-    
-</form>  
-  {% endblock %}   #}
+        {% block content %}
+
+
+
+            <br>
+            <br>
+            <center>
   
   
    
   <h1> Mise à jour d'un Chauffeur </h1>
 <form method="post" {{ form_enctype(Form) }}>
-<table>
     
+    
+
+<table>
     
     
     <tr>
@@ -123,6 +133,8 @@
     
        <tr>
         <td>
+            
+
         {{form_label(Form.telephone)}}
         </td>
         <td>
@@ -157,18 +169,21 @@
     
     <tr>
         <td>
-            <input type="submit" value="Valider"/>
+           <button type="submit" class="btn btn-primary"> Valider </button>
         </td>
         <td>
-             <input type="reset" value="Annuler"/>
+            <input type="reset" class="btn btn-Danger"> </button>
         </td>
     </tr>
 
    
 </table>
+         
    {{form_rest(Form)}}     
 </form>
    
-   {#
+<br>
+<br>
+
 {% endblock %}
-#}
+

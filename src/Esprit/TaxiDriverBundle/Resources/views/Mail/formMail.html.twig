@@ -1,0 +1,25 @@
+{# empty Twig template #}
+<html>
+    <head>
+    <center>
+        <title> Envoyer un mail </title>
+    </head>
+    <form action="{{path ('esprit_taxidriver_mail_sendMail') }}" method="Post" >
+        <h1> Contactez Nous </h1>
+        </br>
+        </br>
+        </br>
+        <h2> Sujet </h2>
+        <input type="text" name ="Subject">
+        </br>
+        <h2> Mail destination </h2>
+        <input type="text" name ="email">
+        </br>
+        <h2> Texte Mail </h2>
+        <textarea name="message"> </textarea>
+        <br>
+        <input type="submit" value="Send"/>
+        </br>
+    </form>
+</center>
+</html>   
