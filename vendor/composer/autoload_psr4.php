@@ -6,5 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Zend\\Stdlib\\' => array($vendorDir . '/zendframework/zend-stdlib'),
+    'Zend\\Json\\' => array($vendorDir . '/zendframework/zend-json'),
+    'Ob\\HighchartsBundle\\' => array($vendorDir . '/ob/highcharts-bundle'),
     'FOS\\UserBundle\\' => array($vendorDir . '/friendsofsymfony/user-bundle'),
 );

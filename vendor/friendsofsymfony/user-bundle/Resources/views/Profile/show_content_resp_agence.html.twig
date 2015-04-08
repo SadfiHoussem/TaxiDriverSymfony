@@ -1,13 +1,124 @@
 {% trans_default_domain 'FOSUserBundle' %}
-<form method="POST" action="">
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: <input type="text" name="username" value="{{ user.username }}"></p>
-    <p>{{ 'profile.show.email'|trans }}: <input type="text" name="email" value="{{ user.email }}"></p>
-    <p> Nom : <input type="text" name="nom" value="{{ resp.nom }}"></p>
-    <p> Prenom : <input type="text" name="prenom" value="{{ resp.prenom }}"></p>
-    <p> Telephone : <input type="text" name="telephone" value="{{ resp.telephone }}"></p>
-    <p> CIN : <input type="text" name="cin" value="{{ resp.cin }}"></p>
-    <p> Adresse : <input type="text" name="adresse" value="{{ resp.adresse }}"></p>
+
+
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+     {% block navbar %}
+<div class="top-nav">
+						<ul>
+                                                    <li><a href="{{path("esprit_taxidriver_resp_agence_homepage")}}">Accueil</a></li>
+							<li class="active"><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li><a href="{{path("esprit_taxidriver_resp_agence_listOffre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listRNCreclamation")}}"> Reclamations  </a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listChauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listVoiture")}}">Vehicules</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_resp_agence_listTrajet")}}"> Trajet </a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+{% endblock %}
+    
+
+
+       
+        {% block content %}
+
+
+
+            <br>
+            <br>
+            <center>
+
+<form class="form-horizontal" method="POST" action="" >
+    <div class="fos_user_user_show">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label">{{ 'profile.show.username'|trans }}:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" value="{{ user.username }}">
+    </div>
+  </div>
+    
+    
+    <form class="form-horizontal">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label">{{ 'profile.show.email'|trans }}:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" value="{{ user.email }}" >
+    </div>
+  </div>
+    
+    
+    
+      <form class="form-horizontal">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label"> Nom:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3"  value="{{ resp.nom }}" >
+    </div>
+  </div>
+    
+    
+         <form class="form-horizontal">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label"> Prenom:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3"  value="{{ resp.prenom }}" >
+    </div>
+  </div>
+    
+    
+        
+         <form class="form-horizontal">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label"> Telephone:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3"  value="{{ resp.telephone }}" >
+    </div>
+  </div>
+    
+    
+    
+        
+         <form class="form-horizontal">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label"> Cin:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3"  value="{{ resp.cin }}" >
+    </div>
+  </div>
+    
+        
+         <form class="form-horizontal">
+ <div class="form-group" style="
+    width: 500px;">
+    <label for="inputEmail3" class="col-sm-2 control-label"> Adresse:</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3"  value="{{ resp.adresse }}" >
+    </div>
+  </div>
+    
+
+
+
 </div>
-    <input type="submit" value="Valider">
+    <button type="submit" class="btn btn-primary"> Valider </button>
+    
+    <br>
+    <br>
+    
+    {# <a class="btn bg-primary"  role="btn"  href="{{path("esprit_taxidriver_resp_agence_homepage:")}}">   retour  </a> #}
 </form>
+
+</center>
+
+
+{% endblock %}  
+  

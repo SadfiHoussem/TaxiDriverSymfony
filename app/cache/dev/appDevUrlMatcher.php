@@ -486,6 +486,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+<<<<<<< HEAD
+        // esprit_taxidriver_graphePie
+        if ($pathinfo === '/pie') {
+            return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\GrapheController::chartPieAction',  '_route' => 'esprit_taxidriver_graphePie',);
+        }
+
+        // esprit_taxidriver_grapheHistogramme
+        if ($pathinfo === '/histogramme') {
+            return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\GrapheController::chartHistogrammeAction',  '_route' => 'esprit_taxidriver_grapheHistogramme',);
+        }
+
+        // esprit_taxidriver_mail_redirection
+        if ($pathinfo === '/redirection') {
+            return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\MailController::redirectionAction',  '_route' => 'esprit_taxidriver_mail_redirection',);
+        }
+
+        // esprit_taxidriver_mail_sendMail
+        if ($pathinfo === '/sendMail') {
+            return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\MailController::sendMailAction',  '_route' => 'esprit_taxidriver_mail_sendMail',);
+=======
         if (0 === strpos($pathinfo, '/admin')) {
             // esprit_taxidriver_admin_mail_sendMail
             if ($pathinfo === '/admin/sendMail') {
@@ -572,6 +592,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\CalendrierController::calendrierAction',  '_route' => 'esprit_taxidriver_admin_calendrier',);
             }
 
+>>>>>>> origin/master
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

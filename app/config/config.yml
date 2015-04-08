@@ -58,15 +58,17 @@ doctrine:
         auto_mapping: true
 
 # Swiftmailer Configuration
+
 swiftmailer:
     transport: %mailer_transport%
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
-    spool:     { type: memory }
     
 # Fos UserBundle
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Esprit\UserBundle\Entity\User
+
+

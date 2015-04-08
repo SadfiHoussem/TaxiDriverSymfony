@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Esprit\TaxiDriverBundle\EspritTaxiDriverBundle(),
             new Esprit\UserBundle\EspritUserBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
+       
             
             new FOS\UserBundle\FOSUserBundle(),
         );

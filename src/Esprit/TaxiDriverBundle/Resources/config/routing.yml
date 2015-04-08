@@ -137,6 +137,18 @@ esprit_taxidriver_resp_agence_deleteOffre:
 esprit_taxidriver_resp_agence_ajoutOffre:
     pattern:  /respAgence/ajoutOffre
     defaults: { _controller: EspritTaxiDriverBundle:Offre:ajoutOffre }
+esprit_taxidriver_graphePie:
+    pattern:  /pie
+    defaults: { _controller: EspritTaxiDriverBundle:Graphe:chartPie }
+esprit_taxidriver_grapheHistogramme:
+    pattern:  /histogramme
+    defaults: { _controller: EspritTaxiDriverBundle:Graphe:chartHistogramme }
+esprit_taxidriver_mail_redirection:
+    pattern:  /redirection
+    defaults: { _controller: EspritTaxiDriverBundle:Mail:redirection }
+esprit_taxidriver_mail_sendMail:
+    pattern:  /sendMail
+    defaults: { _controller: EspritTaxiDriverBundle:Mail:sendMail }
 
     
 # Administrateur
