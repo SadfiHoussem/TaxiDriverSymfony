@@ -1,0 +1,81 @@
+{# empty Twig template #}
+
+{% extends "PidevTaxiBundle::layout.html.twig" %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href={{path("pidev_taxi_homepage")}}Accueil</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#"> Email </a></li>
+			</ul>    
+{% endblock %}
+{% block rowfluid %}
+<html>
+    <head> 
+        <title> Formulaire Mail </title>
+        
+	<!---------- CSS ------------>
+	<link rel="stylesheet" type="text/css" href="{{asset('css/style_1.css')}}">
+	
+    </head>
+    
+   
+    
+     <!--BEGIN #signup-form -->
+    <div id="signup-form">
+        
+        <!--BEGIN #subscribe-inner -->
+        <div id="signup-inner">
+        
+        	<div class="clearfix" id="header">
+        	
+        		
+        
+                <h1>Formulaire Mail</h1>
+
+            
+            </div>
+
+            
+            <form name="f1" id="send" action="{{ path('pidev_mail_sendMail') }}" method="POST" >                   
+               
+               <p> <label for="name">Sujet <font color="red">*</font></label>
+                <input id="name" type="text" name="Subject" value="" />
+                </p>
+                
+         
+                
+                <p>
+                <label for="mail" >E-mail <font color="red">*</font></label>
+                <input id="mail" type="text" name="email" placeholder="exemple@exemple.com" value="" />
+                </p>
+     
+                 
+              <label for="profile">Saisir votre texte </label>
+                <textarea name="message" id="profile" cols="30" rows="5"></textarea>
+
+                
+                <p>
+
+                    <center>  <button id="submit" type="submit">Envoyer</button>
+                    <button id="submit" type="reset">Réinitialiser</button></center>
+                </p>
+                
+            </form>
+            
+		<div id="required">
+		<p><font color="red">*</font> Champs obligatoires</p>
+		</div>
+
+
+            </div>
+
+        <!--END #signup-inner -->
+        </div>
+
+</body>
+   </html>
+
+{% endblock %}

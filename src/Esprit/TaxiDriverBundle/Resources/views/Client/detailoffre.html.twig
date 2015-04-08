@@ -1,0 +1,105 @@
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
+
+{% block navbar %}
+<div class="top-nav">
+						<ul>
+							<li><a href="{{path("esprit_taxidriver_client_homepage")}}">Accueil</a></li>
+							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+                                                        <li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
+							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
+							<li class="active"><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_client_reservation_taxi")}}">Reservations</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_chauffeur")}}">Chauffeurs</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_affi_vehicule")}}">Vehicules</a></li>
+							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+                                            
+					</div>
+{% endblock %}
+
+
+
+{% block content %}
+</br></br></br>
+
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap.css') }}">
+    <script type="text/javascript" language="javascript" src="{{ asset('js/jquery-1.10.2.min.js') }}"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('js/dataTables.bootstrap.js')}}"></script>
+    <script type="text/javascript" language="javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#example').dataTable();
+        } );
+    </script>
+    
+    {#<script type="text/javascript" charset="utf-8">
+    function commenter() {
+        var com=new commentaire();
+        com["Idclient"]=1;
+        com["Idoffre"]=o.idoffre();
+        com["contenu"]=document.getElementById('userMsg').value; ;
+        echo
+        $em = $this->getDoctrine()->getManager();
+           $em->persist($com);
+           $em->flush();
+           window.alert(o.idoffre);
+    }    
+    </script>#}
+    
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+    
+        
+
+
+
+		 <div class="content">
+		 	<!---start-contact----->
+		 	<div class="contact">
+		 		<div class="wrap">
+				<div class="section group">				
+				<div class="col span_1_of_3">
+					<div class="contact_info">
+			    	 	
+      				</div>
+      			<div class="company_address">
+                            <img src={{asset("images/slider1.jpg")}} alt="">
+                            
+				     	<h3>{{o.sujetOffre}} :</h3>
+						    	
+						   		<p>{{o.contenu}}</p>
+						   		<p>Agence : {{o.idagence.nomagence}}</p>
+				   		
+				   </div>
+				</div>				
+				<div class="col span_2_of_3">
+				  <div class="contact-form">
+					    <form method="POST" action="">
+					    	
+						    <div class="contact_info">
+                                                        <h3><span><label>Texte :</label></span></h3>
+						    	<span><textarea name="userMsg"> </textarea></span>
+                                                        <input name="id" type="hidden" class="textbox" value="{{o.idoffre}}">
+                                                        
+						    </div>
+						   
+                                    <input type="submit" value="commenter">
+					    </form>
+</div>
+				    </div>
+  				</div>				
+			  </div>
+			</div>
+			</div>
+                                                                
+
+
+ 
+{% endblock %}

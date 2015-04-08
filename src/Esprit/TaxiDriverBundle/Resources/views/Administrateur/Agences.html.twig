@@ -1,0 +1,80 @@
+
+{% extends "PidevTaxiBundle::layout.html.twig" %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href={{path("esprit_taxidriver_admin_homepage")}}Accueil</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Gestion agences</a></li>
+			</ul>    
+{% endblock %}
+
+{% block rowfluid %}
+    <div class="row-fluid sortable">		
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon user"></i><span class="break"></span>Agences</h2>
+
+						<div class="box-icon">
+							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+						</div>
+					</div>
+                                    
+                                    
+
+                                    
+					<div class="box-content">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable" method='POST'>
+						
+                                               <tr>
+								  <th>Id</th>
+								  <th>Nom agence</th>
+								  <th>Telephone</th>
+								  <th>Adresse</th>
+								  <th>Nom responsable agence</th>
+                                                                  <th> Logo </th>
+                                                                  <th> Actions </th>
+                                                   
+							  </tr> 
+						 
+						
+                                                      {% for a in agence %}
+							 <tr>
+                                                             <td>{{ a.idagence }}</td>
+                                                             <td>{{ a.nomagence }}</td>
+                                                             <td>{{ a.telagence }}</td>
+                                                             <td>{{ a.adresseagence }}</td>
+                                                             <td>{{ a.idrespagence.prenom }}</td>
+                                                           <td><center><img src="{{ asset('uploads/agence/'~a.idagence~'.'~a.path) }}"/></center></td>
+                                                             <td class="center">
+									
+								<center>	<a class="btn btn-info black" href="{{path("esprit_taxidriver_admin_updateAgence",{'idagence':a.idagence})}}">
+										<i class="halflings-icon white edit"></i>  
+									</a>
+									<a class="btn btn-danger yellow" href="{{path("esprit_taxidriver_admin_deleteAgence",{'idagence':a.idagence})}}">
+										<i class="halflings-icon white trash"></i> 
+									</a>
+                                                                       </center>
+								</td>  
+   
+            
+                                                          </tr>
+                                                        {% endfor %} 
+							
+						
+					  </table>   
+                                                        <div class="container">
+ 
+    <center><a href="{{path("esprit_taxidriver_admin_ajoutAgence")}}" class="btn btn-info yellow" role="button">Ajouter une nouvelle agence <img src="{{ asset('images/user-new.gif')}}"/></a></center>
+
+</div>
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+
+    {% endblock %}

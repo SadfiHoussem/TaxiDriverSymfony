@@ -1,0 +1,70 @@
+{% extends "PidevTaxiBundle::layout.html.twig" %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href={{path("pidev_taxi_homepage")}}Accueil</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Consulter offres</a></li>
+			</ul>    
+{% endblock %}
+
+{% block rowfluid %}
+    <div class="row-fluid sortable">		
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon user"></i><span class="break"></span>Offres</h2>
+
+						<div class="box-icon">
+							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+						</div>
+					</div>
+                                    
+                                    
+
+                                    
+					<div class="box-content">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable" method='POST'>
+						   <tr>
+        <th>ID</th>
+        <th>Sujet</th>
+       <th>Contenu</th>
+       <th>Date</th>
+       <th>Nom agence</th>
+      
+
+    </tr> 
+    {%for o in offre %} 
+        <tr> 
+            <td>
+                {{o.idoffre}}
+            </td> 
+            <td>
+                {{o.sujetoffre}}
+            </td> 
+            
+            <td>
+                {{o.contenu}}
+            </td> 
+            <td>
+                {{o.date|date('d/m/Y')}}
+            </td> 
+        
+                <td>{{ o.idagence.nomagence }}</td>
+                
+             </tr>
+    {%endfor%}  
+							
+						
+					  </table>            
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+                       
+
+    {% endblock %}
+

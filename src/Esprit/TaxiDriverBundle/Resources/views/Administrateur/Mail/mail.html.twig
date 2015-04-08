@@ -1,0 +1,43 @@
+{# empty Twig template #}
+{% extends "PidevTaxiBundle::layout.html.twig" %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href={{path("pidev_taxi_homepage")}}Accueil</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#"> Email </a></li>
+			</ul>    
+{% endblock %}
+
+
+{% block rowfluid %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style_1.css')}}">
+<body>
+     
+ <div id="signup-form">
+        
+        <!--BEGIN #subscribe-inner -->
+        <div id="signup-inner">
+        
+        	<div class="clearfix" id="header">
+        	
+        		
+        
+                <h1>Votre demande a été envoyée avec succès
+</h1>
+
+            
+            </div>
+
+            
+		</div>
+
+
+            </div>
+
+        <!--END #signup-inner -->
+        
+</body>
+{% endblock %}

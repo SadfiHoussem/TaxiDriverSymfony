@@ -1,16 +1,14 @@
-{% extends "EspritTaxiDriverBundle::layout.html.twig" %}
-
-
-
+{% extends "EspritTaxiDriverBundle::layout2.html.twig" %}
 
 {% block navbar %}
 <div class="top-nav">
 						<ul>
 							<li><a href="{{path("esprit_taxidriver_client_homepage")}}">Accueil</a></li>
 							<li><a href="{{path("esprit_taxidriver_a_propos")}}">A propos</a></li>
+                                                        <li><a href="{{path("fos_user_profile_show")}}">Profile</a></li>
 							<li><a href="{{path("esprit_taxidriver_affi_agence")}}">Nos agences</a></li>
 							<li><a href="{{path("esprit_taxidriver_affi_offre")}}">Offres</a></li>
-                                                        <li><a href="{{path("esprit_taxidriver_client_reservation_taxi")}}">Reserver</a></li>
+                                                        <li><a href="{{path("esprit_taxidriver_client_reservation_taxi")}}">Reservations</a></li>
                                                         <li><a href="{{path("esprit_taxidriver_affi_chauffeur")}}">Chauffeurs</a></li>
                                                         <li class="active"><a href="{{path("esprit_taxidriver_affi_vehicule")}}">Vehicules</a></li>
 							<li><a href="{{path("esprit_taxidriver_contact")}}">Contact</a></li>
@@ -21,57 +19,34 @@
 {% endblock %}
 
 
+
+
+
 {% block content %}
-<div class="gallery-grids">
-						<div class="gallery-grid">
-							<a href={{asset("images/slider1.jpg")}}><img src={{asset("images/slider1.jpg")}} alt=""></a>
-							<h4>Aenean nonummy hendrerit</h4>
-							<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-							<div class="gallery-button"><a href="#">Read More</a></div>
-						</div>
-						<div class="gallery-grid grid2">
-							<a href={{asset("images/slider3.jpg")}}><img src={{asset("images/slider3.jpg")}} alt=""></a>
-							<h4>nonummy hendrerit mauris</h4>
-							<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-							<div class="gallery-button"><a href="#">Read More</a></div>
-						</div>
-						<div class="gallery-grid">
-							<a href={{asset("images/slider2.jpg")}}><img src={{asset("images/slider2.jpg")}} alt=""></a>
-							<h4>hendrerit mauris. Phasellus</h4>
-							<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-							<div class="gallery-button"><a href="#">Read More</a></div>
-						</div>
-						<div class="clear"> </div>
-					</div>
-					<div class="clear"> </div>
-					<div class="gallery-grids">
-						<div class="gallery-grid">
-							<a href={{asset("images/slider3.jpg")}}><img src={{asset("images/slider3.jpg")}} alt=""></a>
-							<h4>Fusce suscipit varius mi. Cum</h4>
-							<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-							<div class="gallery-button"><a href="#">Read More</a></div>
-						</div>
-						<div class="gallery-grid grid2">
-							<a href={{asset("images/slider1.jpg")}}><img src={{asset("images/slider1.jpg")}} alt=""></a>
-							<h4>sociis natoque penatibus et</h4>
-							<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-							<div class="gallery-button"><a href="#">Read More</a></div>
-						</div>
-						<div class="gallery-grid">
-							<a href={{asset("images/slider2.jpg")}}><img src={{asset("images/slider2.jpg")}} alt=""></a>
-							<h4>hendrerit mauris. Phasellus</h4>
-							<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-							<div class="gallery-button"><a href="#">Read More</a></div>
-						</div>
-					</div>
-					
-				    <div class="clear"> </div>
-				    <div class="projects-bottom-paination">
-						<ul>
-							<li class="active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-						</ul>
-					</div>
-				</div>
-				</div>		 	
+    
+   </br></br></br>
+
+
+
+<div class="wrap">   
+    <div class="gallery-grids">
+    
+   
+    {% for v in voitures %}
+            
+		<div class="gallery-grid">
+	        <a href={{asset("images/slider1.jpg")}}><img src={{asset("images/slider1.jpg")}} alt=""></a>
+                <h4>{{v.typevoiture}}</h4>
+                <h3><u>Informations générales :</u></h3>
+                <p>Nombres de places :{{v.nbrplace}}</br>Matricule :{{v.matricule}}</br></br><div class="gallery-button"></div>
+		</div>
+                {{"                 "}}
+            
+    {% endfor %}    
+        
+    <div class="clear"> </div>
+    
+    <div class="clear"> </div>
+</div>
+</div>    
 {% endblock %}

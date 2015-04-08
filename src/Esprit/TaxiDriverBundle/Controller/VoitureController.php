@@ -15,7 +15,12 @@ class VoitureController extends Controller
         }
             
         if($this->get('security.context')->isGranted('ROLE_CLIENT')){
-            return $this->render('EspritTaxiDriverBundle:Client:vehicules.html.twig');
+            
+            $em = $this->container->get('doctrine')->getEntityManager();
+
+            $voitures = $em->getRepository('EspritTaxiDriverBundle:voiture')->findAll();
+
+            return $this->render('EspritTaxiDriverBundle:Client:vehicules.html.twig',array('voitures' => $voitures));
         }
             
         if($this->get('security.context')->isGranted('ROLE_RESP_AGENCE')){
@@ -26,7 +31,11 @@ class VoitureController extends Controller
             return $this->render('EspritTaxiDriverBundle:Chauffeur:vehicules.html.twig');
         }
         
-        return $this->render('EspritTaxiDriverBundle:Client:vehicules.html.twig');
+        $em = $this->container->get('doctrine')->getEntityManager();
+
+            $voitures = $em->getRepository('EspritTaxiDriverBundle:voiture')->findAll();
+            
+        return $this->render('EspritTaxiDriverBundle:Client:vehicules.html.twig',array('voitures' => $voitures));
     }
     
     public function listVoitureAction() {
@@ -87,4 +96,14 @@ class VoitureController extends Controller
         return $this -> render('EspritTaxiDriverBundle:ResponsableAgence:ajoutVoiture.html.twig',
                 array('Form'=> $form->createView() ));
     }
+    
+    public function listVAction() {
+       
+        $em = $this->container->get('doctrine')->getEntityManager();
+
+
+        $voiture = $em->getRepository('PidevTaxiBundle:Voiture')->findAll();
+
+        return $this->render('PidevTaxiBundle:Voiture:listV.html.twig', array('voiture' => $voiture));
+}
 }

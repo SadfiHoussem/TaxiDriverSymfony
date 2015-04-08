@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Esprit\TaxiDriverBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -38,4 +39,5 @@ class MailController extends Controller
          }
         return $this->render('EspritTaxiDriverBundle:Mail:formMail.html.twig');
     }
+
 }

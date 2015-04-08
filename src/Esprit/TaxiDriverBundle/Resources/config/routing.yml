@@ -41,6 +41,8 @@ esprit_taxidriver_affi_vehicule:
     pattern:  /voiture
     defaults: { _controller: EspritTaxiDriverBundle:Voiture:affVehicule} 
     
+# Client
+
 esprit_taxidriver_client_reservation_taxi:
     pattern:  /client/resTaxi
     defaults: { _controller: EspritTaxiDriverBundle:Reservation:reserver }
@@ -48,6 +50,14 @@ esprit_taxidriver_client_reservation_taxi:
 esprit_taxidriver_client_consul_conf_res:
     pattern:  /client/consulConfRes
     defaults: { _controller: EspritTaxiDriverBundle:Reservation:consulterConfRes }
+
+esprit_taxidriver_client_detail_offre:
+    pattern:  /client/detailoffre/{id}
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:detailoffre }   
+
+esprit_taxidriver_client_bestchauffeurs:
+    pattern:  /bestchauffeurs
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:bestchauffeurs}
     
 # Responsable Agence
 
@@ -141,4 +151,66 @@ esprit_taxidriver_mail_sendMail:
     defaults: { _controller: EspritTaxiDriverBundle:Mail:sendMail }
 
     
+# Administrateur
+
+esprit_taxidriver_admin_mail_sendMail:
+    pattern:  /admin/sendMail
+    defaults: { _controller: EspritTaxiDriverBundle:Mail:sendMail }
     
+esprit_taxidriver_admin_taxi_voit:
+    pattern:  /admin/voiture
+    defaults: { _controller: EspritTaxiDriverBundle:Voiture:listV }
+    
+esprit_taxidriver_admin_listClient:
+    pattern:  /admin/client
+    defaults: { _controller: EspritTaxiDriverBundle:Client:listClient }
+
+esprit_taxidriver_admin_listResp:
+    pattern:  /admin/resp
+    defaults: { _controller: EspritTaxiDriverBundle:Responsable:listResp }
+esprit_taxidriver_admin_updateResp:
+    pattern:  /admin/updateResp/{idresp}
+    defaults: { _controller: EspritTaxiDriverBundle:Responsable:updateResp }
+esprit_taxidriver_admin_deleteResp:
+    pattern:  /admin/deleteResp/{idresp}
+    defaults: { _controller:  EspritTaxiDriverBundle:Responsable:deleteResp }
+esprit_taxidriver_admin_ajoutResp:
+    pattern:  /admin/ajoutResp
+    defaults: { _controller: EspritTaxiDriverBundle:Responsable:ajoutResp }
+    
+esprit_taxidriver_admin_listAgence:
+    pattern:  /admin/Agence
+    defaults: { _controller: EspritTaxiDriverBundle:Agence:listAgence }
+esprit_taxidriver_admin_updateAgence:
+    pattern:  /admin/updateAgence/{idagence}
+    defaults: { _controller: EspritTaxiDriverBundle:Agence:updateAgence }
+esprit_taxidriver_admin_deleteAgence:
+    pattern:  /admin/deleteAgence/{idagence}
+    defaults: { _controller:  EspritTaxiDriverBundle:Agence:deleteAgence }
+esprit_taxidriver_admin_ajoutAgence:
+    pattern:  /admin/ajoutAgence
+    defaults: { _controller: EspritTaxiDriverBundle:Agence:ajoutAgence }
+
+esprit_taxidriver_admin_stat:
+    pattern:  /admin/taxiStat
+    defaults: { _controller: EspritTaxiDriverBundle:Statistique:stat }
+    
+esprit_taxidriver_admin_com:
+    pattern:  /admin/com
+    defaults: { _controller: EspritTaxiDriverBundle:Commentaire:listC }
+esprit_taxidriver_admin_suppCom:
+    pattern:  /admin/suppCom/{id}
+    defaults: { _controller: EspritTaxiDriverBundle:Commentaire:deleteCom }
+    
+esprit_taxidriver_admin_offre:
+    pattern:  /admin/offre
+    defaults: { _controller: EspritTaxiDriverBundle:Offre:listO }
+
+esprit_taxidriver_admin_hist:
+    pattern:  /admin/hist
+    defaults: { _controller: EspritTaxiDriverBundle:Statistique:chartHistogramme }
+
+esprit_taxidriver_admin_calendrier:
+    pattern:  /admin/calendrier
+    defaults: { _controller: EspritTaxiDriverBundle:Calendrier:calendrier } 
+

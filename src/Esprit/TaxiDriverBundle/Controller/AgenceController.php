@@ -9,21 +9,44 @@ class AgenceController extends Controller
     public function affAgenceAction()
     {
         if($this->get('security.context')->isGranted('ROLE_ADMIN')){
-            return $this->render('EspritTaxiDriverBundle:administrateur:agences.html.twig');
+            $em = $this->container->get('doctrine')->getEntityManager();
+
+            $agences = $em->getRepository('EspritTaxiDriverBundle:Agence')->findAll();
+
+            return $this->render('EspritTaxiDriverBundle:administrateur:agences.html.twig' ,  array('agences' => $agences));
         }
             
         if($this->get('security.context')->isGranted('ROLE_CLIENT')){
-            return $this->render('EspritTaxiDriverBundle:Client:agences.html.twig');
+            
+            $em = $this->container->get('doctrine')->getEntityManager();
+
+            $agences = $em->getRepository('EspritTaxiDriverBundle:Agence')->findAll();
+
+            return $this->render('EspritTaxiDriverBundle:Client:agences.html.twig' ,  array('agences' => $agences));
         }
             
         if($this->get('security.context')->isGranted('ROLE_RESP_AGENCE')){
-            return $this->render('EspritTaxiDriverBundle:ResponsableAgence:agences.html.twig');
+            
+            $em = $this->container->get('doctrine')->getEntityManager();
+
+            $agences = $em->getRepository('EspritTaxiDriverBundle:Agence')->findAll();
+
+            return $this->render('EspritTaxiDriverBundle:ResponsableAgence:agences.html.twig' ,  array('agences' => $agences));
         }
             
         if($this->get('security.context')->isGranted('ROLE_CHAUFFEUR')){
-            return $this->render('EspritTaxiDriverBundle:Chauffeur:agences.html.twig');
+            
+            $em = $this->container->get('doctrine')->getEntityManager();
+
+            $agences = $em->getRepository('EspritTaxiDriverBundle:Agence')->findAll();
+
+            return $this->render('EspritTaxiDriverBundle:Chauffeur:agences.html.twig' ,  array('agences' => $agences));
         }
         
-        return $this->render('EspritTaxiDriverBundle:Client:agences.html.twig');
+            $em = $this->container->get('doctrine')->getEntityManager();
+
+            $agences = $em->getRepository('EspritTaxiDriverBundle:Agence')->findAll();
+
+            return $this->render('EspritTaxiDriverBundle:Client:agences.html.twig' ,  array('agences' => $agences));
     }
 }
