@@ -77,7 +77,7 @@ class __TwigTemplate_56f2f266daa69f532a6c9e4318659f9478e09dbbb1a528d9586b705758a
                                                         <li><a href=\"";
         // line 26
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_reservation_taxi");
-        echo "\">Reserver</a></li>
+        echo "\">Reservations</a></li>
                                                         <li><a href=\"";
         // line 27
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_chauffeur");

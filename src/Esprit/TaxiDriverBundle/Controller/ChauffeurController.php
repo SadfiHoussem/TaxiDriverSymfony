@@ -27,7 +27,14 @@ class ChauffeurController extends Controller
         }
             
         if($this->get('security.context')->isGranted('ROLE_CLIENT')){
-            return $this->render('EspritTaxiDriverBundle:Client:chauffeurs.html.twig');
+            
+            
+         $em = $this->container->get('doctrine')->getEntityManager();
+
+        $chauffeurs = $em->getRepository('EspritTaxiDriverBundle:Chauffeur')->findAll();
+
+                
+            return $this->render('EspritTaxiDriverBundle:Client:chauffeurs.html.twig', array('chauffeurs' => $chauffeurs));
         }
             
         if($this->get('security.context')->isGranted('ROLE_RESP_AGENCE')){
@@ -37,8 +44,12 @@ class ChauffeurController extends Controller
         if($this->get('security.context')->isGranted('ROLE_CHAUFFEUR')){
             return $this->render('EspritTaxiDriverBundle:Chauffeur:chauffeurs.html.twig');
         }
+        $em = $this->container->get('doctrine')->getEntityManager();
+
+        $chauffeurs = $em->getRepository('EspritTaxiDriverBundle:Chauffeur')->findAll();
+
         
-        return $this->render('EspritTaxiDriverBundle:Client:chauffeurs.html.twig');
+        return $this->render('EspritTaxiDriverBundle:Client:chauffeurs.html.twig', array('chauffeurs' => $chauffeurs));
     }
 
     public function listChauffeurAction() {
@@ -174,4 +185,18 @@ class ChauffeurController extends Controller
         }
 
     
+    public function bestChauffeursAction()
+    {        
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+                "SELECT * 
+                 FROM BundlesTestBundle:Chauffeur c 
+                 ORDER by c.note DESC"
+                );
+        $chauffeurs = $query->getSingleScalarResult();
+        
+                
+        return $this->render('EspritTaxiDriverBundle:Chauffeur:bestchauffeurs.html.twig' ,array('chauffeurs' => $chauffeurs ) );
+    }
+        
         }

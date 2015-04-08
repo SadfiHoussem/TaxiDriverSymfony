@@ -1,0 +1,96 @@
+{# empty Twig template #}
+  
+{% extends "PidevTaxiBundle::layout.html.twig" %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href={{path("esprit_taxidriver_admin_homepage")}}>Accueil</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Gestion agences</a></li>
+			</ul>    
+{% endblock %}
+
+    
+
+
+       
+        {% block rowfluid %}
+          
+             <link rel="stylesheet" type="text/css" href="{{ asset('css1/bootstrap2.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css1/dataTables.bootstrap.css') }}">
+            <center>
+   
+  <h1>  Ajouter une agence </h1>
+  <br> 
+  <br>
+  
+<form method="post" {{ form_enctype(Form) }}>
+<table>
+    
+    
+    
+     <tr>
+        <td>
+        {{form_label(Form.nomagence)}}
+        </td>
+        <td>
+            {{form_widget(Form.nomagence)}}
+            {{form_errors(Form.nomagence)}}
+        </td>
+    </tr>
+    
+    
+     <tr>
+        <td>
+            {{ form_label(Form.telagence)}}
+        </td>
+        <td>
+           {{ form_widget(Form.telagence)}}
+           {{ form_errors(Form.telagence)}}
+        </td>
+    </tr>
+    
+    
+    <tr>
+        <td>
+        {{form_label(Form.adresseagence)}}
+        </td>
+        <td>
+            {{form_widget(Form.adresseagence)}}
+            {{form_errors(Form.adresseagence)}}
+        </td>
+    </tr>
+    
+   
+    
+       <tr>
+        <td>
+        {{form_label(Form.idrespagence)}}
+        </td>
+        <td>
+            {{form_widget(Form.idrespagence)}}
+            {{form_errors(Form.idrespagence)}}
+        </td>
+    </tr>
+    
+    
+    
+    <tr>
+        <td>
+           
+            <center>  <input type="submit" class="btn btn-info black" value="Valider"></center>
+        </td>
+        <td>
+    <center>  <input type="reset" class="btn btn-info black" value="Annuler"></center>
+        </td>
+    </tr>
+
+   
+</table>
+   {{form_rest(Form)}}     
+</form>
+            </center>
+  
+{% endblock %}

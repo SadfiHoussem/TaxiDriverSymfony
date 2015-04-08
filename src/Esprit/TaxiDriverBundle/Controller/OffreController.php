@@ -32,7 +32,10 @@ class OffreController extends Controller
         if($this->get('security.context')->isGranted('ROLE_CHAUFFEUR')){
             return $this->render('EspritTaxiDriverBundle:Chauffeur:offres.html.twig');
         }
-        return $this->render('EspritTaxiDriverBundle:Client:offres.html.twig');
+        $em = $this->container->get('doctrine')->getEntityManager();
+
+            $offres = $em->getRepository('EspritTaxiDriverBundle:Offre')->findAll();
+        return $this->render('EspritTaxiDriverBundle:Client:offres.html.twig',  array('offres' => $offres));
     }
     
     public function listOffreAction() {

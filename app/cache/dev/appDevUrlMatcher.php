@@ -365,6 +365,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // esprit_taxidriver_client_bestchauffeurs
+        if ($pathinfo === '/bestchauffeurs') {
+            return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::bestchauffeursAction',  '_route' => 'esprit_taxidriver_client_bestchauffeurs',);
+        }
+
         if (0 === strpos($pathinfo, '/respAgence')) {
             if (0 === strpos($pathinfo, '/respAgence/list')) {
                 // esprit_taxidriver_resp_agence_listRNCreclamation
@@ -477,6 +482,94 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // esprit_taxidriver_resp_agence_ajoutOffre
             if ($pathinfo === '/respAgence/ajoutOffre') {
                 return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::ajoutOffreAction',  '_route' => 'esprit_taxidriver_resp_agence_ajoutOffre',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // esprit_taxidriver_admin_mail_sendMail
+            if ($pathinfo === '/admin/sendMail') {
+                return array (  '_controller' => 'EspritTaxiDriverBundle:Mail:sendMail',  '_route' => 'esprit_taxidriver_admin_mail_sendMail',);
+            }
+
+            // esprit_taxidriver_admin_taxi_voit
+            if ($pathinfo === '/admin/voiture') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\VoitureController::listVAction',  '_route' => 'esprit_taxidriver_admin_taxi_voit',);
+            }
+
+            // esprit_taxidriver_admin_listClient
+            if ($pathinfo === '/admin/client') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\ClientController::listClientAction',  '_route' => 'esprit_taxidriver_admin_listClient',);
+            }
+
+            // esprit_taxidriver_admin_listResp
+            if ($pathinfo === '/admin/resp') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\ResponsableController::listRespAction',  '_route' => 'esprit_taxidriver_admin_listResp',);
+            }
+
+            // esprit_taxidriver_admin_updateResp
+            if (0 === strpos($pathinfo, '/admin/updateResp') && preg_match('#^/admin/updateResp/(?P<idresp>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_admin_updateResp')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\ResponsableController::updateRespAction',));
+            }
+
+            // esprit_taxidriver_admin_deleteResp
+            if (0 === strpos($pathinfo, '/admin/deleteResp') && preg_match('#^/admin/deleteResp/(?P<idresp>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_admin_deleteResp')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\ResponsableController::deleteRespAction',));
+            }
+
+            // esprit_taxidriver_admin_ajoutResp
+            if ($pathinfo === '/admin/ajoutResp') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\ResponsableController::ajoutRespAction',  '_route' => 'esprit_taxidriver_admin_ajoutResp',);
+            }
+
+            // esprit_taxidriver_admin_listAgence
+            if ($pathinfo === '/admin/Agence') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\AgenceController::listAgenceAction',  '_route' => 'esprit_taxidriver_admin_listAgence',);
+            }
+
+            // esprit_taxidriver_admin_updateAgence
+            if (0 === strpos($pathinfo, '/admin/updateAgence') && preg_match('#^/admin/updateAgence/(?P<idagence>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_admin_updateAgence')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\AgenceController::updateAgenceAction',));
+            }
+
+            // esprit_taxidriver_admin_deleteAgence
+            if (0 === strpos($pathinfo, '/admin/deleteAgence') && preg_match('#^/admin/deleteAgence/(?P<idagence>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_admin_deleteAgence')), array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\AgenceController::deleteAgenceAction',));
+            }
+
+            // esprit_taxidriver_admin_ajoutAgence
+            if ($pathinfo === '/admin/ajoutAgence') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\AgenceController::ajoutAgenceAction',  '_route' => 'esprit_taxidriver_admin_ajoutAgence',);
+            }
+
+            // esprit_taxidriver_admin_stat
+            if ($pathinfo === '/admin/taxiStat') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\StatistiqueController::statAction',  '_route' => 'esprit_taxidriver_admin_stat',);
+            }
+
+            // esprit_taxidriver_admin_com
+            if ($pathinfo === '/admin/com') {
+                return array (  '_controller' => 'EspritTaxiDriverBundle:Commentaire:listC',  '_route' => 'esprit_taxidriver_admin_com',);
+            }
+
+            // esprit_taxidriver_admin_suppCom
+            if (0 === strpos($pathinfo, '/admin/suppCom') && preg_match('#^/admin/suppCom/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'esprit_taxidriver_admin_suppCom')), array (  '_controller' => 'EspritTaxiDriverBundle:Commentaire:deleteCom',));
+            }
+
+            // esprit_taxidriver_admin_offre
+            if ($pathinfo === '/admin/offre') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\OffreController::listOAction',  '_route' => 'esprit_taxidriver_admin_offre',);
+            }
+
+            // esprit_taxidriver_admin_hist
+            if ($pathinfo === '/admin/hist') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\StatistiqueController::chartHistogrammeAction',  '_route' => 'esprit_taxidriver_admin_hist',);
+            }
+
+            // esprit_taxidriver_admin_calendrier
+            if ($pathinfo === '/admin/calendrier') {
+                return array (  '_controller' => 'Esprit\\TaxiDriverBundle\\Controller\\CalendrierController::calendrierAction',  '_route' => 'esprit_taxidriver_admin_calendrier',);
             }
 
         }

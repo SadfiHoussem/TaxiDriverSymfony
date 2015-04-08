@@ -7,7 +7,7 @@ class __TwigTemplate_971c2a7fb2de8ceae45fa0059e5fbca82f32166a747f21c18e65c5232a2
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("EspritTaxiDriverBundle::layout.html.twig");
+        $this->parent = $this->env->loadTemplate("EspritTaxiDriverBundle::layout2.html.twig");
 
         $this->blocks = array(
             'head' => array($this, 'block_head'),
@@ -18,7 +18,7 @@ class __TwigTemplate_971c2a7fb2de8ceae45fa0059e5fbca82f32166a747f21c18e65c5232a2
 
     protected function doGetParent(array $context)
     {
-        return "EspritTaxiDriverBundle::layout.html.twig";
+        return "EspritTaxiDriverBundle::layout2.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -117,7 +117,7 @@ function SelectLigne(obj)
                                                         <li class=\"active\"><a href=\"";
         // line 69
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_client_reservation_taxi");
-        echo "\">Reserver</a></li>
+        echo "\">Reservations</a></li>
                                                         <li><a href=\"";
         // line 70
         echo $this->env->getExtension('routing')->getPath("esprit_taxidriver_affi_chauffeur");

@@ -1,0 +1,69 @@
+{% extends "PidevTaxiBundle::layout.html.twig" %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href={{path("pidev_taxi_homepage")}}Accueil</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">Consulter voitures</a></li>
+			</ul>    
+{% endblock %}
+
+{% block rowfluid %}
+    <div class="row-fluid sortable">		
+				<div class="box span12">
+					<div class="box-header" data-original-title>
+						<h2><i class="halflings-icon user"></i><span class="break"></span>Voitures</h2>
+
+						<div class="box-icon">
+							<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+							<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+						</div>
+					</div>
+                                    
+                                    
+
+                                    
+					<div class="box-content">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable" method='POST'>
+						   <tr>
+        <th>Matricule</th>
+        <th>Nombre de place</th>
+       <th>Type</th>
+       <th>Etat</th>
+       <th>Nom agence</th>
+      
+
+    </tr> 
+    {%for v in voiture%} 
+        <tr> 
+            <td>
+                {{v.matricule}}
+            </td> 
+            <td>
+                {{v.nbrplace}}
+            </td> 
+            
+            <td>
+                {{v.typevoiture}}
+            </td> 
+            <td>
+                {{v.etat}}
+            </td> 
+        
+                <td>{{ v.idagence.nomagence }}</td>
+          
+             </tr>
+    {%endfor%}  
+							
+						
+					  </table>            
+					</div>
+				</div><!--/span-->
+			
+			</div><!--/row-->
+
+    {% endblock %}
+
